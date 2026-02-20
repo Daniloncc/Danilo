@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { projects } from "../data/projects";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
+import Nav from "../components/NavHome";
+import ProjectsHeaderSVG from "../components/ProjectsHeaderSVG";
 import Caroussel from "../components/Caroussel";
+import Footer from "../components/FooterHome";
 
 // ─── Animation variants ──────────────────────────────────────────
 const fadeUp = {
@@ -14,144 +18,6 @@ const fadeUp = {
     transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1], delay },
   }),
 };
-
-// ─── Logo ───────────────────────────────────────────────────────
-function Logo() {
-  const daniloLetters = [
-    { char: "a", delay: "0.08s" },
-    { char: "n", delay: "0.16s" },
-    { char: "i", delay: "0.24s" },
-    { char: "l", delay: "0.32s" },
-    { char: "o", delay: "0.40s" },
-  ];
-  const costaLetters = [
-    { char: "o", delay: "0.56s" },
-    { char: "s", delay: "0.64s" },
-    { char: "t", delay: "0.72s" },
-    { char: "a", delay: "0.80s" },
-  ];
-
-  return (
-    <a
-      href="/"
-      className="font-serif text-xl tracking-wide text-[#1C1C1E] flex items-center group"
-      style={{ width: "160px" }}
-    >
-      <span>D</span>
-
-      {daniloLetters.map((l, i) => (
-        <span
-          key={i}
-          className="text-[#7A9E7E] inline-block max-w-0 overflow-hidden opacity-0 transition-all duration-300 group-hover:max-w-[2rem] group-hover:opacity-100"
-          style={{ transitionDelay: l.delay }}
-        >
-          {l.char}
-        </span>
-      ))}
-
-      {/* Espace fixe entre les deux mots */}
-      <span
-        className="inline-block w-0 overflow-hidden transition-all duration-150 group-hover:w-[0.5ch]"
-        style={{ transitionDelay: "0.44s" }}
-      />
-
-      <span>C</span>
-
-      {costaLetters.map((l, i) => (
-        <span
-          key={i}
-          className="text-[#7A9E7E] inline-block max-w-0 overflow-hidden opacity-0 transition-all duration-300 group-hover:max-w-[2rem] group-hover:opacity-100"
-          style={{ transitionDelay: l.delay }}
-        >
-          {l.char}
-        </span>
-      ))}
-    </a>
-  );
-}
-
-// ─── Cursor ──────────────────────────────────────────────────────
-function CustomCursor() {
-  useEffect(() => {
-    const cursor = document.createElement("div");
-    const ring = document.createElement("div");
-    cursor.className = "custom-cursor";
-    ring.className = "custom-cursor-ring";
-    document.body.appendChild(cursor);
-    document.body.appendChild(ring);
-
-    let mx = 0,
-      my = 0,
-      rx = 0,
-      ry = 0;
-
-    document.addEventListener("mousemove", (e) => {
-      mx = e.clientX;
-      my = e.clientY;
-      cursor.style.left = mx + "px";
-      cursor.style.top = my + "px";
-    });
-
-    function animateRing() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.left = rx + "px";
-      ring.style.top = ry + "px";
-      requestAnimationFrame(animateRing);
-    }
-    animateRing();
-
-    // Hover effect sur tous les éléments cliquables
-    const clickables = document.querySelectorAll("a, button, [role='button']");
-    clickables.forEach((el) => {
-      el.style.cursor = "none";
-      el.addEventListener("mouseenter", () => {
-        cursor.style.width = "32px";
-        cursor.style.height = "32px";
-        cursor.style.opacity = "0.5";
-        ring.style.opacity = "0";
-      });
-      el.addEventListener("mouseleave", () => {
-        cursor.style.width = "8px";
-        cursor.style.height = "8px";
-        cursor.style.opacity = "1";
-        ring.style.opacity = "0.5";
-      });
-    });
-
-    return () => {
-      cursor.remove();
-      ring.remove();
-    };
-  }, []);
-
-  return null;
-}
-
-// ─── Navbar ──────────────────────────────────────────────────────
-function Navbar() {
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-16 py-5 bg-[#F7F5F0] border-b border-[#E2DDD6]">
-      <Logo />
-      <ul className="flex gap-10 list-none">
-        {["Work", "Industrial", "Dentist", "About", "Contact"].map((item) => (
-          <li key={item}>
-            <a
-              href={`#${item.toLowerCase()}`}
-              className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors duration-200"
-            >
-              {item}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <div className="flex items-center gap-2 text-[#7A9E7E] text-[11px] tracking-wide">
-        <span className="w-2 h-2 rounded-full bg-[#7A9E7E] animate-pulse" />
-        Available for work
-      </div>
-    </nav>
-  );
-}
 
 // ─── Hero ────────────────────────────────────────────────────────
 function Hero() {
@@ -164,13 +30,13 @@ function Hero() {
         animate="visible"
         custom={0}
       >
-        <div className="inline-flex items-center gap-2 bg-[#EDF2ED] text-[#7A9E7E] text-[11px] uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
-          <span className="w-1.5 h-1.5 text-bold rounded-full bg-[#7A9E7E]" />
+        <div className="inline-flex items-center gap-2 bg-[#EDF2ED] text-[#165323] text-[11px] uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
+          <span className="w-1.5 h-1.5 text-bold rounded-full bg-[#165323]" />
           Montreal, QC · Open to work
         </div>
 
         <h1
-          className="font-serif font-light text-[#1C1C1E] leading-[0.95] tracking-tight mb-6"
+          className="font-serif font-light text-[#1C1C1E] leading-[0.95] tracking-tight mb-10"
           style={{ fontSize: "clamp(3.5rem, 7vw, 6.5rem)" }}
         >
           Built with
@@ -189,7 +55,7 @@ function Hero() {
           integrations to CAD automation. Three careers. One mindset.
         </p>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 mt-25">
           <a
             href="#work"
             className="bg-[#1C1C1E] text-[#F7F5F0] px-8 py-3.5 text-[11px] uppercase tracking-widest hover:bg-[#7A9E7E] transition-colors duration-200"
@@ -276,7 +142,7 @@ function Hero() {
                   "CSS3",
                   "JavaScript ES6+",
                   "React",
-                  "Vue.js",
+                  "Smarty",
                   "jQuery",
                   "Tailwind",
                   "Bootstrap",
@@ -293,7 +159,6 @@ function Hero() {
                   "NPM",
                   "Composer",
                   "Postman",
-                  "Docker",
                   "Linux",
                 ],
               },
@@ -337,7 +202,7 @@ function Projects() {
       id="work"
       className="px-16 py-24 border-t border-[#E2DDD6] bg-[#F7F5F0]"
     >
-      <div className="flex justify-between items-end mb-14">
+      <div className="relative flex justify-between items-end mb-14">
         <div>
           <p className="text-[13px] uppercase tracking-widest text-[#165323] mb-2">
             Selected Work
@@ -351,6 +216,8 @@ function Projects() {
             Projects
           </h2>
         </div>
+
+        <ProjectsHeaderSVG />
       </div>
 
       <Caroussel
@@ -366,53 +233,55 @@ function Projects() {
             custom={i * 0.1}
             className="bg-white border border-[#E2DDD6] overflow-hidden group hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
           >
-            <div className="w-full aspect-video bg-[#EDF2ED] flex items-center justify-center">
-              <img src="" alt="" />
-            </div>
+            <Link to={`/project/${project.slug || project.id}`}>
+              <div className="w-full aspect-video bg-[#EDF2ED] flex items-center justify-center">
+                <img src={project.image} alt="" />
+              </div>
 
-            <div className="p-6">
-              <p className="text-[12px] uppercase tracking-widest text-[#165323] mb-1.5">
-                {project.type}
-              </p>
-              <h3 className="font-serif text-xl font-normal text-[#1C1C1E] mb-2">
-                {project.title}
-              </h3>
-              <p className="text-[13px] text-[#6B6B6B] leading-relaxed mb-4">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {project.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="text-[11px] px-2.5 py-1 bg-[#EDF2ED] text-[#165323] rounded-full"
-                  >
-                    {t}
-                  </span>
-                ))}
+              <div className="p-6">
+                <p className="text-[12px] uppercase tracking-widest text-[#165323] mb-1.5">
+                  {project.type}
+                </p>
+                <h3 className="font-serif text-xl font-normal text-[#1C1C1E] mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-[13px] text-[#6B6B6B] leading-relaxed mb-4">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="text-[11px] px-2.5 py-1 bg-[#EDF2ED] text-[#165323] rounded-full"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-4">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors"
+                    >
+                      GitHub →
+                    </a>
+                  )}
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors"
+                    >
+                      Live →
+                    </a>
+                  )}
+                </div>
               </div>
-              <div className="flex gap-4">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors"
-                  >
-                    GitHub →
-                  </a>
-                )}
-                {project.live && (
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors"
-                  >
-                    Live →
-                  </a>
-                )}
-              </div>
-            </div>
+            </Link>
           </motion.div>
         )}
       />
@@ -690,6 +559,45 @@ function Testimonials({ page = "web" }) {
 
 // ─── Contact ──────────────────────────────────────────────────────────────────
 function Contact() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Validation — affiche l'erreur 2 secondes
+    if (!form.name || !form.email || !form.message) {
+      setError(true);
+      setTimeout(() => setError(false), 2000);
+      return;
+    }
+
+    setLoading(true);
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID,
+        { name: form.name, email: form.email, message: form.message },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        setLoading(false);
+        setSubmitted(true);
+        // Reaffiche le form après 3 secondes
+        setTimeout(() => {
+          setSubmitted(false);
+          setForm({ name: "", email: "", message: "" });
+        }, 3000);
+      })
+      .catch(() => {
+        alert("Something went wrong. Please try again.");
+        setLoading(false);
+      });
+  };
+
   return (
     <section
       id="contact"
@@ -720,8 +628,10 @@ function Contact() {
           <div className="flex flex-col gap-3">
             {[
               { label: "GitHub", href: "https://github.com/Daniloncc" },
-              { label: "LinkedIn", href: "#" },
-              { label: "Montreal, QC · Remote OK", href: null },
+              {
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/in/danilo-nunes-costa-e-costa-12b451181/",
+              },
             ].map((item) =>
               item.href ? (
                 <a
@@ -744,89 +654,116 @@ function Contact() {
         </motion.div>
 
         {/* Form */}
-        <motion.form
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0.15}
-          className="flex flex-col gap-5"
-          onSubmit={(e) => e.preventDefault()}
-        >
-          {[
-            {
-              id: "name",
-              label: "Name",
-              type: "text",
-              placeholder: "Your name",
-            },
-            {
-              id: "email",
-              label: "Email",
-              type: "email",
-              placeholder: "your@email.com",
-            },
-          ].map((field) => (
-            <div key={field.id}>
-              <label
-                htmlFor={field.id}
-                className="block text-[10px] uppercase tracking-widest text-[#6B6B6B] mb-2"
+        <div className="relative">
+          {/* Message erreur — apparaît par dessus le form */}
+          <AnimatePresence>
+            {error && (
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                className="absolute inset-0 z-10 flex items-center justify-center bg-[#F7F5F0]/90"
               >
-                {field.label}
-              </label>
-              <input
-                id={field.id}
-                type={field.type}
-                placeholder={field.placeholder}
-                className="w-full px-4 py-3 bg-white border border-[#E2DDD6] text-[14px] text-[#1C1C1E] placeholder-[#C0BAB0] outline-none focus:border-[#7A9E7E] transition-colors duration-200"
-              />
-            </div>
-          ))}
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-[10px] uppercase tracking-widest text-[#6B6B6B] mb-2"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              rows={5}
-              placeholder="Tell me about your project or opportunity..."
-              className="w-full px-4 py-3 bg-white border border-[#E2DDD6] text-[14px] text-[#1C1C1E] placeholder-[#C0BAB0] outline-none focus:border-[#7A9E7E] transition-colors duration-200 resize-none"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full py-4 bg-[#1C1C1E] text-[#F7F5F0] text-[11px] uppercase tracking-widest hover:bg-[#7A9E7E] transition-colors duration-200"
-          >
-            Send Message
-          </button>
-        </motion.form>
+                <p className="text-[12px] uppercase tracking-widest text-red-400 border border-red-200 px-6 py-3 bg-white">
+                  Please fullfill all fields. Thank you.
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <AnimatePresence mode="wait">
+            {submitted ? (
+              // Message de remerciement
+              <motion.div
+                key="thanks"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="py-16 text-center"
+              >
+                <p className="font-serif text-[#1C1C1E] text-2xl mb-2">
+                  Message sent.
+                </p>
+                <p className="text-[13px] text-[#6B6B6B]">
+                  I'll get back to you soon. Thank you.
+                </p>
+              </motion.div>
+            ) : (
+              // Formulaire
+              <motion.form
+                key="form"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={0.15}
+                className="flex flex-col gap-5"
+                onSubmit={handleSubmit}
+              >
+                {[
+                  {
+                    id: "name",
+                    label: "Name",
+                    type: "text",
+                    placeholder: "Your name",
+                  },
+                  {
+                    id: "email",
+                    label: "Email",
+                    type: "email",
+                    placeholder: "your@email.com",
+                  },
+                ].map((field) => (
+                  <div key={field.id}>
+                    <label
+                      htmlFor={field.id}
+                      className="block text-[10px] uppercase tracking-widest text-[#6B6B6B] mb-2"
+                    >
+                      {field.label}
+                    </label>
+                    <input
+                      id={field.id}
+                      type={field.type}
+                      placeholder={field.placeholder}
+                      value={form[field.id]}
+                      onChange={(e) =>
+                        setForm({ ...form, [field.id]: e.target.value })
+                      }
+                      className="w-full px-4 py-3 bg-white border border-[#E2DDD6] text-[14px] text-[#1C1C1E] placeholder-[#C0BAB0] outline-none focus:border-[#7A9E7E] transition-colors duration-200"
+                    />
+                  </div>
+                ))}
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-[10px] uppercase tracking-widest text-[#6B6B6B] mb-2"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    rows={5}
+                    placeholder="Tell me about your project or opportunity..."
+                    value={form.message}
+                    onChange={(e) =>
+                      setForm({ ...form, message: e.target.value })
+                    }
+                    className="w-full px-4 py-3 bg-white border border-[#E2DDD6] text-[14px] text-[#1C1C1E] placeholder-[#C0BAB0] outline-none focus:border-[#7A9E7E] transition-colors duration-200 resize-none"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-4 bg-[#1C1C1E] text-[#F7F5F0] text-[11px] uppercase tracking-widest hover:bg-[#7A9E7E] transition-colors duration-200 disabled:opacity-50"
+                >
+                  {loading ? "Sending..." : "Send Message"}
+                </button>
+              </motion.form>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
-  );
-}
-
-// ─── Footer ───────────────────────────────────────────────────────────────────
-function Footer() {
-  return (
-    <footer className="px-16 py-7 border-t border-[#E2DDD6] bg-[#F7F5F0] flex justify-between items-center">
-      <p className="text-[12px] text-[#6B6B6B]">
-        © 2026 Danilo Costa — All rights reserved
-      </p>
-      <div className="flex gap-6">
-        {["GitHub", "LinkedIn", "Resume"].map((link) => (
-          <a
-            key={link}
-            href="#"
-            className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors"
-          >
-            {link}
-          </a>
-        ))}
-      </div>
-    </footer>
   );
 }
 
@@ -834,8 +771,7 @@ function Footer() {
 export default function Home() {
   return (
     <div className="relative">
-      <CustomCursor />
-      <Navbar />
+      <Nav />
       <Hero />
       <Projects />
       <About />
