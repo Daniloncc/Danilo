@@ -60,8 +60,8 @@ function Caroussel({ items, renderItem, itemsPerPage = 3 }) {
         className={`absolute left-0 top-1/2 -translate-y-1/2 text-7xl transition-colors duration-200
           ${
             canPrev
-              ? "text-[#7A9E7E] hover:text-[#1C1C1E]"
-              : "text-[#E2DDD6] cursor-not-allowed pointer-events-none"
+              ? "text-[#165323] hover:text-[#1C1C1E]"
+              : "text-[#7A9E7E] cursor-not-allowed pointer-events-none"
           }`}
       >
         ‹
@@ -75,8 +75,8 @@ function Caroussel({ items, renderItem, itemsPerPage = 3 }) {
         className={`absolute right-0 top-1/2 -translate-y-1/2 text-7xl transition-colors duration-200
           ${
             canNext
-              ? "text-[#7A9E7E] hover:text-[#1C1C1E]"
-              : "text-[#E2DDD6] cursor-not-allowed pointer-events-none"
+              ? "text-[#165323] hover:text-[#1C1C1E]"
+              : "text-[#7A9E7E] cursor-not-allowed pointer-events-none"
           }`}
       >
         ›
