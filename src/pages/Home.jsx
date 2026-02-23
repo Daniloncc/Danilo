@@ -589,12 +589,20 @@ function Contact() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
+  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Validation — affiche l'erreur 2 secondes
     if (!form.name || !form.email || !form.message) {
-      setError(true);
+      setError("Please fullfill all fields. Thank you.");
+      setTimeout(() => setError(false), 2000);
+      return;
+    }
+
+    if (!isValidEmail(form.email)) {
+      setError("Please enter a valid email address.");
       setTimeout(() => setError(false), 2000);
       return;
     }
@@ -692,7 +700,7 @@ function Contact() {
                 className="absolute inset-0 z-10 flex items-center justify-center bg-[#F7F5F0]/90"
               >
                 <p className="text-[12px] uppercase tracking-widest text-red-400 border border-red-200 px-6 py-3 bg-white">
-                  Please fullfill all fields. Thank you.
+                  {error}
                 </p>
               </motion.div>
             )}
