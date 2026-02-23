@@ -216,7 +216,7 @@ export const projectDetails = [
             "Multi-page HTML/CSS/JS",
             "Deployed on Netlify",
         ],
-        screenshots: [],
+        screenshots: ["/images/macbook_plantes.webp"],
     },
     {
         id: 7,

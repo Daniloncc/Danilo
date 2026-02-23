@@ -371,7 +371,7 @@ function About() {
             },
           ].map((item, i) => (
             <div key={i} className="grid grid-cols-[80px_1fr] gap-6">
-              <span className="font-serif text-sm text-[#7A9E7E] tracking-wide pt-0.5">
+              <span className="font-serif text-sm text-[#7A9E7E] tracking-wide">
                 {item.year}
               </span>
               <div>
