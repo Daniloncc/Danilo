@@ -395,7 +395,7 @@ function Testimonials({ page = "web" }) {
   const [showModal, setShowModal] = useState(false);
   const [form, setForm] = useState({ name: "", role: "", text: "" });
   const [submitted, setSubmitted] = useState(false);
-
+  const [error, setError] = useState(false);
   const [testimonialsList, setTestimonialsList] = useState([]);
 
   useEffect(() => {
@@ -407,7 +407,12 @@ function Testimonials({ page = "web" }) {
   const filtered = testimonialsList.filter((t) => t.page === page);
 
   const handleSubmit = () => {
-    if (!form.name || !form.role || !form.text) return;
+    // Validation — affiche l'erreur 2 secondes
+    if (!form.name || !form.role || !form.text) {
+      setError("Please fullfill all fields. Thank you.");
+      setTimeout(() => setError(false), 2000);
+      return;
+    }
 
     emailjs
       .send(
@@ -434,7 +439,7 @@ function Testimonials({ page = "web" }) {
   };
 
   return (
-    <section className="px-6 md:px-16 py-12 md:py-24 border-t border-[#E2DDD6] bg-[#F7F5F0]">
+    <section className="relative px-6 md:px-16 py-12 md:py-24 border-t border-[#E2DDD6] bg-[#F7F5F0]">
       <div className="text-center mb-14">
         <p className="text-[12px] uppercase tracking-widest text-[#165323] mb-2">
           Testimonials
@@ -508,7 +513,7 @@ function Testimonials({ page = "web" }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#F7F5F0] border border-[#E2DDD6] p-10 max-w-lg w-full"
+              className="relative bg-[#F7F5F0] border border-[#E2DDD6] p-10 max-w-lg w-full"
             >
               {submitted ? (
                 <div className="text-center py-8">
@@ -572,6 +577,21 @@ function Testimonials({ page = "web" }) {
                       Submit
                     </button>
                   </div>
+                  {/* Message erreur — apparaît par dessus le form */}
+                  <AnimatePresence>
+                    {error && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        className="absolute inset-0 z-10 flex items-center justify-center bg-[#F7F5F0]/90"
+                      >
+                        <p className="text-[12px] uppercase tracking-widest text-red-400 border border-red-200 px-6 py-3 bg-white">
+                          {error}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </>
               )}
             </motion.div>
