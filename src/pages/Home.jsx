@@ -277,6 +277,20 @@ function Projects() {
 
             {/* Liens externes — en dehors du Link */}
             <div className="flex gap-4 px-6 pb-6">
+              {project.slug === "portfolio" ? (
+                <span className="text-[11px] uppercase tracking-widest text-[#7A9E7E]">
+                  You're already here
+                </span>
+              ) : project.live ? (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors"
+                >
+                  Live →
+                </a>
+              ) : null}
               {project.github && (
                 <a
                   href={project.github}
@@ -285,16 +299,6 @@ function Projects() {
                   className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors"
                 >
                   GitHub →
-                </a>
-              )}
-              {project.live && (
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors"
-                >
-                  Live →
                 </a>
               )}
             </div>
