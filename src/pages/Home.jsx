@@ -337,11 +337,11 @@ function About() {
             </h2>
           </div>
           <p className="text-[15px] text-[#F7F5F0]/60 leading-relaxed">
-            From dentistry in Brazil to industrial design and web development
-            in Montreal — my path has been anything but linear. Each career gave
-            me a different lens: precision from medicine, aesthetics from
-            design, and logic from code. The result is a developer who thinks in
-            systems and obsesses over details.
+            From dentistry in Brazil to industrial design and web development in
+            Montreal — my path has been anything but linear. Each career gave me
+            a different lens: precision from medicine, aesthetics from design,
+            and logic from code. The result is a developer who thinks in systems
+            and obsesses over details.
           </p>
         </motion.div>
 
