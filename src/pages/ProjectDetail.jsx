@@ -1,13 +1,11 @@
 import { useEffect, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
-import { getProjectDetail, getAdjacentProjects } from "../data/projectDetails";
+import { getProjectDetail } from "../data/projectDetails";
 
 import Nav from "../components/NavHome";
-import CustomCursor from "../components/CustomCursorWeb";
 import Footer from "../components/FooterHome";
 
-// ─── Animation variants ──────────────────────────────────────────
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: (delay = 0) => ({
@@ -17,13 +15,12 @@ const fadeUp = {
   }),
 };
 
-// ─── Section heading ─────────────────────────────────────────────
 function SectionHeading({ label }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <div ref={ref} className="mb-6">
+    <div ref={ref} className="mb-6 text-center md:text-left">
       <div className="overflow-hidden pb-3">
         <motion.h2
           className="font-serif font-light text-[#1C1C1E] text-3xl"
@@ -46,7 +43,6 @@ function SectionHeading({ label }) {
   );
 }
 
-// ─── ProjectDetail Page ───────────────────────────────────────────
 export default function ProjectDetail() {
   const { id } = useParams();
   const project = getProjectDetail(id);
@@ -57,7 +53,7 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-[#F7F5F0] flex items-center justify-center">
+      <div className="min-h-screen bg-[#F7F5F0] flex items-center justify-center px-6">
         <div className="text-center">
           <p className="text-[11px] uppercase tracking-widest text-[#6B6B6B] mb-4">
             404
@@ -81,43 +77,44 @@ export default function ProjectDetail() {
       <Nav />
 
       {/* ── Hero Header ─────────────────────────────────────────── */}
-      <section className="pt-32 px-16 pb-16 border-b border-[#E2DDD6]">
+      <section className="pt-24 md:pt-32 px-6 md:px-16 pb-10 md:pb-16 border-b border-[#E2DDD6]">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={0}
         >
-          <Link
-            to="/#work"
-            className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors mb-10 block"
-          >
-            ← Back to projects
-          </Link>
+          <div className="text-center md:text-left">
+            <Link
+              to="/#work"
+              className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors mb-8 md:mb-10 block"
+            >
+              ← Back to projects
+            </Link>
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-[1fr_340px] gap-20 items-start">
-          {/* Left — titre + subtitle + laptop animé */}
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-10 md:gap-20 items-start">
+          {/* Left */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={0.05}
           >
-            <h1
-              className="font-serif font-light text-[#1C1C1E] leading-[0.92] tracking-tight mb-6"
-              style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
-            >
-              {project.title}
-            </h1>
-            <p className="text-[16px] text-[#6B6B6B] leading-relaxed max-w-2xl mb-14">
-              {project.subtitle}
-            </p>
+            <div className="text-center md:text-left">
+              <h1
+                className="font-serif font-light text-[#1C1C1E] leading-[0.92] tracking-tight mb-6"
+                style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
+              >
+                {project.title}
+              </h1>
+              <p className="text-[16px] text-[#6B6B6B] leading-relaxed mb-10 md:mb-14">
+                {project.subtitle}
+              </p>
+            </div>
 
-            {/* Laptop SVG animé */}
-
-            {/* <section className=" py-20 border-b border-[#E2DDD6]"> */}
-            <div className="pt-20 max-w-3xl">
+            <div className="pt-6 md:pt-20 max-w-3xl">
               <motion.div
                 variants={fadeUp}
                 initial="hidden"
@@ -130,16 +127,15 @@ export default function ProjectDetail() {
                 </p>
               </motion.div>
             </div>
-            {/* </section> */}
           </motion.div>
 
-          {/* Right — sidebar méta */}
+          {/* Sidebar */}
           <motion.aside
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={0.15}
-            className="flex flex-col gap-5 bg-white border border-[#E2DDD6] p-7"
+            className="flex flex-col gap-5 bg-white border border-[#E2DDD6] p-6 md:p-7"
           >
             {[
               { label: "Context", value: project.meta.context },
@@ -162,7 +158,7 @@ export default function ProjectDetail() {
 
             <div className="border-t border-[#E2DDD6] pt-5">
               <p className="text-[10px] uppercase tracking-widest text-[#6B6B6B] mb-3 flex items-center gap-2">
-                <span>⚙</span> Tools
+                Tools
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {project.tech.map((t) => (
@@ -179,7 +175,7 @@ export default function ProjectDetail() {
             {project.methodologies?.length > 0 && (
               <div className="border-t border-[#E2DDD6] pt-5">
                 <p className="text-[10px] uppercase tracking-widest text-[#6B6B6B] mb-3 flex items-center gap-2">
-                  <span>◎</span> Methodologies
+                  Methodologies
                 </p>
                 <ul className="flex flex-col gap-1.5">
                   {project.methodologies.map((m) => (
@@ -236,26 +232,26 @@ export default function ProjectDetail() {
         initial="hidden"
         animate="visible"
         custom={0.25}
-        className="px-16 py-10 border-b border-[#E2DDD6]"
+        className="px-6 md:px-16 py-8 md:py-10 border-b border-[#E2DDD6]"
       >
-        <div className="relative w-full aspect-[16/7] bg-[#E2DDD6] overflow-hidden">
+        <div className="relative w-full aspect-[16/9] md:aspect-[16/7] bg-[#E2DDD6] overflow-hidden">
           <img
             src={project.coverImage}
             alt={project.title}
             className="w-full h-full object-contain"
           />
-          <span className="absolute top-4 left-4 w-6 h-6 border-t border-l border-[#7A9E7E]" />
-          <span className="absolute top-4 right-4 w-6 h-6 border-t border-r border-[#7A9E7E]" />
-          <span className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-[#7A9E7E]" />
-          <span className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-[#7A9E7E]" />
+          <span className="absolute top-3 left-3 md:top-4 md:left-4 w-5 h-5 md:w-6 md:h-6 border-t border-l border-[#7A9E7E]" />
+          <span className="absolute top-3 right-3 md:top-4 md:right-4 w-5 h-5 md:w-6 md:h-6 border-t border-r border-[#7A9E7E]" />
+          <span className="absolute bottom-3 left-3 md:bottom-4 md:left-4 w-5 h-5 md:w-6 md:h-6 border-b border-l border-[#7A9E7E]" />
+          <span className="absolute bottom-3 right-3 md:bottom-4 md:right-4 w-5 h-5 md:w-6 md:h-6 border-b border-r border-[#7A9E7E]" />
         </div>
       </motion.section>
 
-      {/* ── Approach + Screenshots ───────────────────────────────── */}
+      {/* ── Screenshots ───────────────────────────────── */}
       {project.approach && (
-        <section className="px-16 py-20 border-b border-[#E2DDD6] bg-white">
-          <div className="flex flex-wrap gap-12 items-center">
-            <div className="flex-1 min-w-[280px] max-w-3xl">
+        <section className="px-6 md:px-16 py-12 md:py-20 border-b border-[#E2DDD6] bg-white">
+          <div className="flex flex-wrap gap-8 md:gap-12 items-start">
+            <div className="w-full md:flex-1 md:min-w-[280px] md:max-w-3xl">
               <motion.div
                 variants={fadeUp}
                 initial="hidden"
@@ -276,7 +272,7 @@ export default function ProjectDetail() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={0.1}
-                className="flex flex-wrap gap-4 flex-1 min-w-[280px]"
+                className="w-full md:flex-1 md:min-w-[280px] flex flex-wrap gap-4"
               >
                 {project.screenshots.map((src, i) => (
                   <div key={i} className="w-full bg-[#E2DDD6] overflow-hidden">
@@ -295,7 +291,7 @@ export default function ProjectDetail() {
 
       {/* ── Solution ─────────────────────────────────────────────── */}
       {project.solution && (
-        <section className="px-16 py-20 border-b border-[#E2DDD6]">
+        <section className="px-6 md:px-16 py-12 md:py-20 border-b border-[#E2DDD6]">
           <div className="max-w-3xl">
             <motion.div
               variants={fadeUp}
@@ -322,7 +318,7 @@ export default function ProjectDetail() {
                       key={i}
                       className="flex items-start gap-3 text-[14px] text-[#165323]"
                     >
-                      <span className="text-[#7A9E7E]">→</span>
+                      <span className="text-[#7A9E7E] shrink-0">→</span>
                       {item}
                     </li>
                   ))}
@@ -335,8 +331,8 @@ export default function ProjectDetail() {
 
       {/* ── Outcome ──────────────────────────────────────────────── */}
       {project.outcome && (
-        <section className="px-16 py-20 border-b border-[#E2DDD6] bg-[#1C1C1E]">
-          <div className="max-w-3xl">
+        <section className="px-6 md:px-16 py-12 md:py-20 border-b border-[#E2DDD6] bg-[#1C1C1E]">
+          <div className="max-w-3xl text-center md:text-left">
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -383,8 +379,7 @@ export default function ProjectDetail() {
         </section>
       )}
 
-      {/* ── Footer ──────────────────────────────────────────────── */}
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }

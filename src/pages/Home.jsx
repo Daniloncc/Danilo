@@ -22,7 +22,7 @@ const fadeUp = {
 // ─── Hero ────────────────────────────────────────────────────────
 function Hero() {
   return (
-    <section className="relative min-h-screen grid grid-cols-2 gap-16 items-start px-16 pt-28 pb-16 bg-[#F7F5F0]">
+    <section className="relative min-h-screen grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start px-6 md:px-16 pt-24 md:pt-28 pb-16 bg-[#F7F5F0]">
       {/* Left */}
       <motion.div
         variants={fadeUp}
@@ -93,7 +93,7 @@ function Hero() {
         <div className="grid grid-cols-3 border border-[#E2DDD6]">
           {[
             { num: "4", label: "Languages" },
-            { num: "8+", label: "Projects" },
+            { num: "5+", label: "Projects" },
             { num: "3", label: "Careers" },
           ].map((s, i) => (
             <div
@@ -184,7 +184,7 @@ function Hero() {
       </motion.div>
 
       {/* Scroll hint */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#6B6B6B] text-[12px] uppercase tracking-widest">
+      <div className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-[#6B6B6B] text-[12px] uppercase tracking-widest">
         <span
           className="w-px h-10 bg-gradient-to-b from-[#E2DDD6] to-[#7A9E7E]"
           style={{ animation: "scrollLine 1.5s ease infinite" }}
@@ -200,10 +200,11 @@ function Projects() {
   return (
     <section
       id="work"
-      className="px-16 py-24 border-t border-[#E2DDD6] bg-[#F7F5F0]"
+      className="px-6 md:px-16 py-12 md:py-24 border-t border-[#E2DDD6] bg-[#F7F5F0]"
     >
-      <div className="relative flex justify-between items-end mb-14">
-        <div>
+      <div className="relative mb-6 md:mb-14">
+        {/* Titre — centré mobile, gauche desktop */}
+        <div className="text-center md:text-left">
           <p className="text-[13px] uppercase tracking-widest text-[#165323] mb-2">
             Selected Work
           </p>
@@ -217,12 +218,22 @@ function Projects() {
           </h2>
         </div>
 
-        <ProjectsHeaderSVG />
+        {/* SVG desktop — absolu à droite */}
+        <div
+          className="hidden md:block absolute right-0 top-0"
+          style={{ width: "55%" }}
+        >
+          <ProjectsHeaderSVG />
+        </div>
+
+        {/* SVG mobile — en dessous du titre */}
+        <div className="block md:hidden mt-3 w-full">
+          <ProjectsHeaderSVG />
+        </div>
       </div>
 
       <Caroussel
         items={projects}
-        itemsPerPage={3}
         renderItem={(project, i) => (
           <motion.div
             key={project.id}
@@ -231,14 +242,17 @@ function Projects() {
             whileInView="visible"
             viewport={{ once: true }}
             custom={i * 0.1}
-            className="bg-white border border-[#E2DDD6] overflow-hidden group hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+            className="w-full bg-white border border-[#E2DDD6] overflow-hidden group hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
           >
+            {/* Seule la partie image + info est cliquable vers le détail */}
             <Link to={`/project/${project.slug || project.id}`}>
               <div className="w-full aspect-video bg-[#EDF2ED] flex items-center justify-center">
-                <img src={project.image} alt="" />
+                <img
+                  src={project.image}
+                  alt={`Descktop showing the project ${project.title}`}
+                />
               </div>
-
-              <div className="p-6">
+              <div className="px-6 pt-6 pb-2">
                 <p className="text-[12px] uppercase tracking-widest text-[#165323] mb-1.5">
                   {project.type}
                 </p>
@@ -258,30 +272,32 @@ function Projects() {
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-4">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors"
-                    >
-                      GitHub →
-                    </a>
-                  )}
-                  {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors"
-                    >
-                      Live →
-                    </a>
-                  )}
-                </div>
               </div>
             </Link>
+
+            {/* Liens externes — en dehors du Link */}
+            <div className="flex gap-4 px-6 pb-6">
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors"
+                >
+                  GitHub →
+                </a>
+              )}
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors"
+                >
+                  Live →
+                </a>
+              )}
+            </div>
           </motion.div>
         )}
       />
@@ -292,25 +308,30 @@ function Projects() {
 // ─── About ────────────────────────────────────────────────────────────────────
 function About() {
   return (
-    <section id="about" className="bg-[#1C1C1E] text-[#F7F5F0] px-16 py-24">
-      <div className="grid grid-cols-2 gap-24 items-center">
+    <section
+      id="about"
+      className="bg-[#1C1C1E] text-[#F7F5F0] px-6 md:px-16 py-12 md:py-24"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <p className="text-[12px] uppercase tracking-widest text-[#B5D1BB] mb-3">
-            About
-          </p>
-          <h2
-            className="font-serif font-light leading-tight mb-6"
-            style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
-          >
-            An unusual
-            <br />
-            <em className="italic text-[#7A9E7E]">trajectory</em>
-          </h2>
+          <div className="text-center md:text-left">
+            <p className="text-[12px] uppercase tracking-widest text-[#B5D1BB] mb-3">
+              About
+            </p>
+            <h2
+              className="font-serif font-light leading-tight mb-6"
+              style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
+            >
+              An unusual
+              <br />
+              <em className="italic text-[#7A9E7E]">trajectory</em>
+            </h2>
+          </div>
           <p className="text-[15px] text-[#F7F5F0]/60 leading-relaxed">
             From dentistry in Brazil to industrial design, then to web
             development in Montreal — my path has been anything but linear. Each
@@ -409,7 +430,7 @@ function Testimonials({ page = "web" }) {
   };
 
   return (
-    <section className="px-16 py-24 border-t border-[#E2DDD6] bg-[#F7F5F0]">
+    <section className="px-6 md:px-16 py-12 md:py-24 border-t border-[#E2DDD6] bg-[#F7F5F0]">
       <div className="text-center mb-14">
         <p className="text-[12px] uppercase tracking-widest text-[#165323] mb-2">
           Testimonials
@@ -601,30 +622,32 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="px-16 py-24 border-t border-[#E2DDD6] bg-[#F7F5F0]"
+      className="px-6 md:px-16 py-12 md:py-24 border-t border-[#E2DDD6] bg-[#F7F5F0]"
     >
-      <div className="grid grid-cols-2 gap-24 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-start">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <p className="text-[12px] uppercase tracking-widest text-[#165323] mb-3">
-            Contact
-          </p>
-          <h2
-            className="font-serif font-light text-[#1C1C1E] leading-tight mb-4"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
-          >
-            Let's build
-            <br />
-            something
-          </h2>
-          <p className="text-[15px] text-[#6B6B6B] leading-relaxed mb-8">
-            Open to full-time positions, freelance projects, or just a good
-            conversation about code and design.
-          </p>
+          <div className="text-center md:text-left">
+            <p className="text-[12px] uppercase tracking-widest text-[#165323] mb-3">
+              Contact
+            </p>
+            <h2
+              className="font-serif font-light text-[#1C1C1E] leading-tight mb-4"
+              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
+            >
+              Let's build
+              <br />
+              something
+            </h2>
+            <p className="text-[15px] text-[#6B6B6B] leading-relaxed mb-8">
+              Open to full-time positions, freelance projects, or just a good
+              conversation about code and design.
+            </p>
+          </div>
           <div className="flex flex-col gap-3">
             {[
               { label: "GitHub", href: "https://github.com/Daniloncc" },
