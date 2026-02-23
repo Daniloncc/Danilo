@@ -1,27 +1,6 @@
 [
     {
         "id": 1,
-        "name": "Mickael R.",
-        "role": "Supervisor — Riopel Consultant",
-        "page": "web",
-        "text": "Danilo brings a level of rigor and attention to detail that you rarely see in a junior developer. His clinical background shows in the quality of his work."
-    },
-    {
-        "id": 2,
-        "name": "Gillaume Harvey",
-        "role": "Teacher Supervisor — Collège Maisonneuve",
-        "page": "web",
-        "text": "His unique path gives him a perspective other students simply don't have. He understands the stakes behind a project — not just the code."
-    },
-    {
-        "id": 3,
-        "name": "Pati C.",
-        "role": "Colleague — Collège Maisonneuve",
-        "page": "web",
-        "text": "Working with Danilo means having someone reliable, precise, and with a real design vision. He doesn't just write code that works — he wants it to look great too."
-    },
-    {
-        "id": 4,
         "name": "Lore.",
         "role": "Ami",
         "page": "web",
