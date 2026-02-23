@@ -1,13 +1,6 @@
 [
     {
         "id": 1,
-        "name": "Lore.",
-        "role": "Ami",
-        "page": "web",
-        "text": "Working with Danilo means having someone reliable, precise, and with a real design vision. He doesn't just write code that works — he wants it to look great too."
-    },
-    {
-        "id": 2,
         "name": "Guillaume H.",
         "role": "Teacher",
         "page": "web",
