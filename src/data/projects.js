@@ -72,4 +72,16 @@ export const projects = [
     live: "https://plantesjs.netlify.app/index.html",
     image: "/images/macbook_plantes.webp",
   },
+  {
+    id: 7,
+    slug: "portfolio",
+    type: "Personal Project",
+    title: "Portfolio — daniloncc.com",
+    description:
+      "Personal portfolio built with React, Vite, Tailwind CSS, and Framer Motion.",
+    tech: ["React", "Vite", "Tailwind CSS", "Framer Motion", "shadcn/ui"],
+    github: "https://github.com/Daniloncc/Danilo",
+    live: "https://daniloncc.com",
+    image: "/images/macbook_portfolio.webp",
+  }
 ];

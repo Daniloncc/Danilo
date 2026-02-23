@@ -201,7 +201,11 @@ export default function ProjectDetail() {
                   <span className="text-[#165323]">→</span> GitHub
                 </a>
               )}
-              {project.meta.live && (
+              {project.slug === "portfolio" ? (
+                <span className="text-[11px] uppercase tracking-widest text-[#7A9E7E]">
+                  You're already here
+                </span>
+              ) : project.live ? (
                 <a
                   href={project.meta.live}
                   target="_blank"
@@ -210,7 +214,7 @@ export default function ProjectDetail() {
                 >
                   <span className="text-[#165323]">→</span> Live Demo
                 </a>
-              )}
+              ) : null}
               {project.meta.figma && (
                 <a
                   href={project.meta.figma}
@@ -226,28 +230,32 @@ export default function ProjectDetail() {
         </div>
       </section>
 
-      {/* ── Cover Image ─────────────────────────────────────────── */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        custom={0.25}
-        className="px-6 md:px-16 py-8 md:py-10 border-b border-[#E2DDD6]"
-      >
-        <div className="relative w-full aspect-[16/9] md:aspect-[16/7] bg-[#E2DDD6] overflow-hidden">
-          <img
-            src={project.coverImage}
-            alt={project.title}
-            className="w-full h-full object-contain"
-          />
-          <span className="absolute top-3 left-3 md:top-4 md:left-4 w-5 h-5 md:w-6 md:h-6 border-t border-l border-[#7A9E7E]" />
-          <span className="absolute top-3 right-3 md:top-4 md:right-4 w-5 h-5 md:w-6 md:h-6 border-t border-r border-[#7A9E7E]" />
-          <span className="absolute bottom-3 left-3 md:bottom-4 md:left-4 w-5 h-5 md:w-6 md:h-6 border-b border-l border-[#7A9E7E]" />
-          <span className="absolute bottom-3 right-3 md:bottom-4 md:right-4 w-5 h-5 md:w-6 md:h-6 border-b border-r border-[#7A9E7E]" />
-        </div>
-      </motion.section>
-
       {/* ── Screenshots ───────────────────────────────── */}
+      {project.slug === "portfolio" ? (
+        <span></span>
+      ) : (
+        <motion.section
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.25}
+          className="px-6 md:px-16 py-8 md:py-10 border-b border-[#E2DDD6]"
+        >
+          <div className="relative w-full aspect-[16/9] md:aspect-[16/7] bg-[#E2DDD6] overflow-hidden">
+            <img
+              src={project.coverImage}
+              alt={project.title}
+              className="w-full h-full object-contain"
+            />
+            <span className="absolute top-3 left-3 md:top-4 md:left-4 w-5 h-5 md:w-6 md:h-6 border-t border-l border-[#7A9E7E]" />
+            <span className="absolute top-3 right-3 md:top-4 md:right-4 w-5 h-5 md:w-6 md:h-6 border-t border-r border-[#7A9E7E]" />
+            <span className="absolute bottom-3 left-3 md:bottom-4 md:left-4 w-5 h-5 md:w-6 md:h-6 border-b border-l border-[#7A9E7E]" />
+            <span className="absolute bottom-3 right-3 md:bottom-4 md:right-4 w-5 h-5 md:w-6 md:h-6 border-b border-r border-[#7A9E7E]" />
+          </div>
+        </motion.section>
+      )}
+
+      {/* ── Cover Image ─────────────────────────────────────────── */}
       {project.approach && (
         <section className="px-6 md:px-16 py-12 md:py-20 border-b border-[#E2DDD6] bg-white">
           <div className="flex flex-wrap gap-8 md:gap-12 items-start">
