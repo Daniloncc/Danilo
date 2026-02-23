@@ -4,12 +4,17 @@ import { useLocation } from "react-router-dom";
 export default function CustomCursor() {
   const location = useLocation();
 
+  // Ne pas afficher le curseur sur les appareils tactiles
+  const isTouchDevice = () =>
+    window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+
   useEffect(() => {
+    if (isTouchDevice()) return;
+
     const cursor = document.querySelector(".custom-cursor");
     const ring = document.querySelector(".custom-cursor-ring");
     if (!cursor || !ring) return;
 
-    // Reset à chaque changement de page
     cursor.style.width = "8px";
     cursor.style.height = "8px";
     cursor.style.opacity = "1";
@@ -17,6 +22,8 @@ export default function CustomCursor() {
   }, [location]);
 
   useEffect(() => {
+    if (isTouchDevice()) return; // ← stoppe tout ici sur mobile
+
     const cursor = document.createElement("div");
     const ring = document.createElement("div");
     cursor.className = "custom-cursor";
