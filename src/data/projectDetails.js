@@ -218,6 +218,43 @@ export const projectDetails = [
         ],
         screenshots: [],
     },
+    {
+        id: 7,
+        slug: "portfolio",
+        title: "Portfolio — daniloncc.com",
+        subtitle:
+            "Personal portfolio designed and built from scratch with React and Framer Motion — featuring animated SVG illustrations.",
+        meta: {
+            context: "Personal Project",
+            role: "Full-Stack Developer & UI Designer",
+            year: "2025",
+            duration: "Ongoing",
+            team: "Solo",
+            github: "https://github.com/Daniloncc/Danilo",
+            live: "https://daniloncc.com",
+            figma: null,
+        },
+        tech: ["React", "Vite", "Tailwind CSS", "Framer Motion", "shadcn/ui", "React Router DOM"],
+        methodologies: ["Component-Based Architecture", "Mobile-First Design", "Animation-Driven UI"],
+        coverImage: "/images/portfolio_cover.webp",
+        challenge:
+            "In a market saturated with developer portfolios, blending in is the real risk. The challenge was to build something that stops the scroll — not through excess, but through restraint. A design so considered and precise that its simplicity becomes the statement.",
+        approach:
+            "Built with a mobile-first approach using React and Vite. Animations were handled with Framer Motion, triggering on scroll and load events. Custom SVG components were designed to animate independently, adding personality without compromising performance.",
+        solution:
+            "A fully responsive single-page portfolio with a custom animated cursor, scroll-triggered Framer Motion animations, an interactive project carousel, and a unique visual identity built around a cream and sage green palette.",
+        outcome:
+            "Deployed on Vercel with a custom domain. The portfolio showcases both technical skills and design sensibility, serving as a live demonstration of the stack and approach used to build it.",
+        outcomes: [
+            "Custom animated cursor component",
+            "Scroll-triggered Framer Motion animations",
+            "Responsive carousel with state synchronization",
+            "Animated SVG illustrations",
+            "Deployed on Vercel with custom domain daniloncc.com",
+            "Mobile-first responsive design",
+        ],
+        screenshots: ["/images/macbook_portfolio.webp"],
+    },
 ];
 
 // Helper — find by slug or id
