@@ -1,0 +1,270 @@
+{
+  "nav": {
+    "work": "Projets",
+    "about": "À propos",
+    "contact": "Contact",
+    "versions": "Versions",
+    "language": "Langue",
+    "other_versions": "Autres Versions",
+    "available": "Disponible pour travailler"
+  },
+  "hero": {
+    "badge": "Montréal, QC · Disponible",
+    "title_1": "Construit avec",
+    "title_2": "précision",
+    "title_3": "chirurgicale",
+    "description": "Développeur full-stack avec une formation en <strong>dentisterie et design industriel</strong>. Je crée des expériences numériques propres et ciblées — des intégrations API à l'automatisation CAO. Trois carrières. Un seul état d'esprit.",
+    "cta_work": "Voir mes projets",
+    "cta_contact": "Me contacter →",
+    "scroll": "Défiler",
+    "stats": {
+      "spoken": "Langues",
+      "projects": "Projets",
+      "careers": "Carrières"
+    },
+    "stack": {
+      "title": "Stack technique",
+      "backend": "Back-end",
+      "frontend": "Front-end",
+      "tools": "Outils"
+    }
+  },
+  "projects": {
+    "label": "Travaux sélectionnés",
+    "title_1": "Projets de",
+    "title_2": "développement web",
+    "live": "Voir →",
+    "github": "GitHub →",
+    "already_here": "Vous y êtes déjà"
+  },
+  "about": {
+    "label": "À propos",
+    "title_1": "Un parcours",
+    "title_2": "atypique",
+    "description": "De la dentisterie au Brésil au design industriel et au développement web à Montréal — mon chemin a été tout sauf linéaire. Chaque carrière m'a donné une perspective différente : la précision de la médecine, l'esthétique du design, et la logique du code. Le résultat : un développeur qui pense en systèmes et obsède sur les détails.",
+    "timeline": [
+      {
+        "year": "2026",
+        "title": "Développement web — Collège Maisonneuve",
+        "sub": "Projets full-stack, API REST, MVC & travail d'équipe agile"
+      },
+      {
+        "year": "2022",
+        "title": "Designer industriel - EMSOM",
+        "sub": "Modélisation 3D, plans techniques 2D & prototypage"
+      },
+      {
+        "year": "2013",
+        "title": "Dentiste - UEFS",
+        "sub": "Chirurgie buccale, prothèses & soins restaurateurs"
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "Témoignages",
+    "title": "Ce qu'ils disent",
+    "leave": "Laisser un témoignage",
+    "your_voice": "Votre avis",
+    "modal_title": "Laisser un témoignage",
+    "name_placeholder": "Votre nom",
+    "role_placeholder": "Votre rôle",
+    "message_placeholder": "Votre message",
+    "cancel": "Annuler",
+    "submit": "Envoyer",
+    "thank_you": "Merci.",
+    "received": "Votre témoignage a bien été reçu.",
+    "error": "Veuillez remplir tous les champs. Merci."
+  },
+  "contact": {
+    "label": "Contact",
+    "title_1": "Construisons",
+    "title_2": "quelque chose",
+    "description": "Ouvert aux postes à temps plein, aux projets freelance, ou simplement à une bonne conversation sur le code et le design.",
+    "name_label": "Nom",
+    "name_placeholder": "Votre nom",
+    "email_label": "Courriel",
+    "email_placeholder": "votre@email.com",
+    "message_label": "Message",
+    "message_placeholder": "Parlez-moi de votre projet ou opportunité...",
+    "send": "Envoyer",
+    "sending": "Envoi en cours...",
+    "success_title": "Message envoyé.",
+    "success_sub": "Je vous répondrai bientôt. Merci.",
+    "error_fields": "Veuillez remplir tous les champs. Merci.",
+    "error_email": "Veuillez entrer une adresse courriel valide."
+  }, 
+  "projects_data": {
+    "vino": {
+      "type": "Projet scolaire",
+      "description": "Application full-stack de gestion de cave à vin avec React Hooks, Tailwind CSS et une base de données MySQL."
+    },
+    "vino-figma": {
+      "type": "Projet scolaire · Design UI",
+      "description": "Prototype interactif haute-fidélité de l'application Vino, conçu dans Figma avant l'implémentation."
+    },
+    "faceneuve": {
+      "type": "Projet scolaire",
+      "description": "Réseau social fictif pour les étudiants du Collège Maisonneuve, avec une implémentation Laravel complète."
+    },
+    "stampee": {
+      "type": "Projet scolaire",
+      "description": "Plateforme d'enchères de timbres rares avec CRUD complet en PHP, architecture MVC personnalisée et Twig."
+    },
+    "plantes": {
+      "type": "Projet scolaire",
+      "description": "Boutique de plantes en JavaScript vanilla avec catalogue dynamique, panier d'achat et gestion des commandes."
+    },
+    "portfolio": {
+      "type": "Projet personnel",
+      "description": "Portfolio personnel développé avec React, Vite, Tailwind CSS et Framer Motion."
+    }
+  },
+  "project_detail": {
+    "back": "← Retour aux projets",
+    "not_found_label": "404",
+    "not_found_title": "Projet introuvable",
+    "not_found_back": "← Retour à l'accueil",
+    "sidebar": {
+      "context": "Contexte",
+      "role": "Rôle",
+      "year": "Année",
+      "duration": "Durée",
+      "team": "Équipe",
+      "tools": "Outils",
+      "methodologies": "Méthodologies",
+      "github": "GitHub",
+      "live": "Démo en ligne",
+      "figma": "Figma",
+      "already_here": "Vous y êtes déjà"
+    },
+    "sections": {
+      "challenge": "Défi",
+      "approach": "Approche",
+      "solution": "Solution",
+      "outcome": "Résultat"
+    }
+  },
+  "projects_detail_data": {
+    "vino": {
+      "subtitle": "Application full-stack de gestion de cave à vin avec authentification, filtres avancés et interface dynamique.",
+      "meta": {
+        "context": "Projet scolaire — Collège Maisonneuve",
+        "role": "Développeur Full-Stack",
+        "duration": "8 semaines",
+        "team": "5 développeurs"
+      },
+      "challenge": "Concevoir une application de gestion de cave à vin utilisable par plusieurs utilisateurs simultanément, avec une interface intuitive et une architecture découplée entre le frontend React et le backend Node.js. Le principal défi était de synchroniser l'état React avec les mutations de l'API tout en maintenant une expérience utilisateur fluide.",
+      "approach": "En équipe de cinq, nous avons travaillé en sprints Agile hebdomadaires, tous en développeurs full-stack avec Node.js et React. J'ai contribué autant au backend qu'au frontend, comme le reste de l'équipe. Nous avons coordonné notre travail avec la stratégie de branches Git Flow pour gérer le développement en parallèle.",
+      "solution": "Nous avons livré une application full-stack avec authentification JWT, gestion complète des vins (CRUD), un système de filtres et de recherche avancé, et une interface responsive Tailwind CSS. L'architecture découplée permet une maintenance indépendante du frontend et du backend.",
+      "outcome": "Application déployée sur Render avec toutes les fonctionnalités prévues. Le projet a démontré notre capacité à travailler en équipe sur une stack moderne et à livrer un produit complet en conditions réelles.",
+      "outcomes": [
+        "Architecture frontend / backend découplée",
+        "Authentification JWT sécurisée",
+        "Déployé en production sur Render",
+        "Développé en équipe de 5 avec Git Flow"
+      ]
+    },
+    "vino-figma": {
+      "subtitle": "Prototype interactif haute-fidélité pour l'application Vino, conçu dans Figma avant l'implémentation — du wireframe au design final.",
+      "meta": {
+        "context": "Projet scolaire — Collège Maisonneuve",
+        "role": "Designer UI/UX",
+        "duration": "2 semaines",
+        "team": "Solo"
+      },
+      "challenge": "Avant d'écrire la moindre ligne de code, l'équipe avait besoin d'une vision commune de l'application. Le défi était de concevoir une interface cohérente pour une application de cave à vin — avec une navigation intuitive, une identité visuelle forte et un prototype cliquable que les développeurs pourraient suivre de près.",
+      "approach": "J'ai commencé par définir les principaux flux utilisateur (inscription, ajout d'un vin, filtrage, profil), puis produit des wireframes basse-fidélité pour valider la structure avec l'équipe. Une fois la navigation approuvée, je suis passé au haute-fidélité avec la palette de couleurs, la typographie et les composants réutilisables.",
+      "solution": "Un prototype Figma interactif complet couvrant tous les écrans de l'application : onboarding, connexion, tableau de bord, liste de vins, vue détaillée, filtres et profil utilisateur. Chaque composant a été conçu pour être réutilisable et facilement traduisible en code.",
+      "outcome": "Le prototype a servi de référence tout au long du développement, réduisant les allers-retours entre le design et le code. L'équipe pouvait implémenter les interfaces avec une vision claire, ce qui a accéléré le développement et assuré la cohérence visuelle du produit final.",
+      "outcomes": [
+        "Prototype interactif cliquable de bout en bout",
+        "Composants Figma réutilisables",
+        "Flux utilisateur complets définis en amont",
+        "Référence de design pour l'équipe de développement"
+      ]
+    },
+    "faceneuve": {
+      "subtitle": "Réseau social fictif bilingue pour les étudiants du Collège Maisonneuve, avec une implémentation Laravel complète incluant le contrôle d'accès par rôle, les notifications par e-mail et la gestion de documents PDF.",
+      "meta": {
+        "context": "Projet scolaire — Collège Maisonneuve",
+        "role": "Développeur Full-Stack & Designer UI",
+        "duration": "3 semaines",
+        "team": "Solo"
+      },
+      "challenge": "Mener un projet de bout en bout couvrant à la fois le design et le développement : créer une interface unique et cohérente en combinant plusieurs templates Bootstrap et des touches de design personnelles, puis l'implémenter fidèlement dans Laravel sans perdre son identité visuelle. La plateforme devait également prendre en charge deux langues, un rendu d'interface basé sur les rôles et des fonctionnalités de gestion de documents.",
+      "approach": "Plutôt que de concevoir de zéro dans un outil de design, j'ai référencé trois templates Bootstrap différents et les ai fusionnés, en ajoutant mes propres personnalisations pour obtenir un look distinctif et cohérent. Une fois la direction visuelle établie, j'ai configuré le framework Laravel avec les migrations, les modèles et les vues Blade, en utilisant Twig pour gérer les variables de template. J'ai ensuite ajouté le support bilingue, la logique d'affichage par rôle, et les fonctionnalités d'e-mail et de PDF.",
+      "solution": "Une plateforme web bilingue responsive construite avec Laravel et Bootstrap, avec une interface unique créée en fusionnant et personnalisant plusieurs templates Bootstrap. Propulsée par Twig pour la gestion dynamique des variables, l'application prend en charge les notifications par e-mail, les téléversements et téléchargements de documents PDF, et adapte son interface selon le rôle de l'utilisateur connecté.",
+      "outcome": "Le projet a mis en valeur ma capacité à gérer le flux de travail complet — des décisions de design visuel à l'implémentation full-stack. Il a renforcé mes compétences dans la construction d'applications Laravel fiables avec des fonctionnalités avancées telles que le support multilingue, la gestion de documents et la logique d'interface pilotée par les rôles.",
+      "outcomes": [
+        "Interface unique créée en combinant et personnalisant trois templates Bootstrap",
+        "Plateforme bilingue (français & anglais) avec changement de langue complet",
+        "Gestion de l'affichage par rôle — l'interface s'adapte dynamiquement selon le rôle de l'utilisateur",
+        "Système de notifications par e-mail intégré dans le backend Laravel",
+        "Fonctionnalité de téléversement, gestion et téléchargement de documents PDF",
+        "Twig utilisé pour une gestion flexible et maintenable des variables de template",
+        "Architecture MVC Laravel 10 complète",
+        "Interface responsive construite avec Bootstrap 5",
+        "Développement de bout en bout : analyse des besoins → intégration UI → implémentation backend"
+      ]
+    },
+    "stampee": {
+      "subtitle": "Plateforme d'enchères de timbres rares avec authentification, gestion des favoris et messagerie automatique du gagnant.",
+      "meta": {
+        "context": "Projet scolaire — Collège Maisonneuve",
+        "role": "Développeur Full-Stack",
+        "duration": "4 semaines",
+        "team": "Solo"
+      },
+      "challenge": "Concevoir une architecture MVC from scratch en PHP sans framework, en gérant manuellement le routage, la séparation des couches modèle/vue/contrôleur et la sécurité des formulaires. L'objectif était de comprendre en profondeur les fondations d'un framework avant d'en utiliser un.",
+      "approach": "J'ai commencé par modéliser la base de données et définir les routes, puis construit les contrôleurs et modèles PHP avant d'intégrer Twig pour les vues. Chaque fonctionnalité a été testée manuellement avec Postman pour valider la logique backend.",
+      "solution": "Une plateforme d'enchères complète permettant aux visiteurs de parcourir les timbres, et aux utilisateurs inscrits de créer des enchères, placer des offres, gérer leurs favoris, et recevoir automatiquement un message lorsqu'ils remportent une enchère.",
+      "outcome": "Projet livré avec un CRUD complet, une authentification sécurisée et une logique d'enchères fonctionnelle. Cette expérience a solidifié ma compréhension des patterns MVC que j'utilise maintenant quotidiennement avec Laravel.",
+      "outcomes": [
+        "Architecture MVC PHP personnalisée, sans framework",
+        "Système d'enchères avec minuterie",
+        "Messagerie automatique du gagnant",
+        "CRUD complet sur les timbres et les profils"
+      ]
+    },
+    "plantes": {
+      "subtitle": "Premier projet JavaScript vanilla — une boutique de plantes avec catalogue dynamique, panier interactif et page de commande.",
+      "meta": {
+        "context": "Projet scolaire — Collège Maisonneuve",
+        "role": "Développeur Frontend",
+        "duration": "5 semaines - début du programme",
+        "team": null
+      },
+      "challenge": "Construire une boutique en ligne entièrement fonctionnelle sans aucun framework — en utilisant uniquement JavaScript natif pour gérer le catalogue, le panier d'achat et toutes les interactions utilisateur.",
+      "approach": "Manipulation directe du DOM avec JavaScript ES6, organisation du code en modules fonctionnels, et persistance de l'état du panier avec localStorage.",
+      "solution": "Une application multi-pages avec un catalogue de plantes filtrable, un panier dynamique mis à jour en temps réel et une page de finalisation de commande.",
+      "outcome": "Projet déployé sur Netlify. Première expérience JavaScript vanilla complète, qui a posé les bases de la logique frontend avant d'apprendre les frameworks modernes.",
+      "outcomes": [
+        "Catalogue de plantes dynamique",
+        "Panier interactif avec localStorage",
+        "HTML/CSS/JS multi-pages",
+        "Déployé sur Netlify"
+      ]
+    },
+    "portfolio": {
+      "subtitle": "Portfolio personnel conçu et développé from scratch avec React et Framer Motion — avec des illustrations SVG animées.",
+      "meta": {
+        "context": "Projet personnel",
+        "role": "Développeur Full-Stack & Designer UI",
+        "duration": "En cours",
+        "team": "Solo"
+      },
+      "challenge": "Dans un marché saturé de portfolios de développeurs, se fondre dans la masse est le vrai risque. Le défi était de créer quelque chose qui arrête le scroll — non pas par excès, mais par retenue. Un design si réfléchi et précis que sa simplicité devient le message.",
+      "approach": "Construit avec une approche mobile-first avec React et Vite. Les animations ont été gérées avec Framer Motion, se déclenchant au scroll et au chargement. Des composants SVG personnalisés ont été conçus pour s'animer indépendamment, ajoutant de la personnalité sans compromettre les performances.",
+      "solution": "Un portfolio single-page entièrement responsive avec un curseur animé personnalisé, des animations Framer Motion déclenchées au scroll, un carrousel de projets interactif, et une identité visuelle unique construite autour d'une palette crème et vert sauge.",
+      "outcome": "Déployé sur Vercel avec un domaine personnalisé. Le portfolio met en valeur à la fois les compétences techniques et la sensibilité design, servant de démonstration en direct de la stack et de l'approche utilisées pour le construire.",
+      "outcomes": [
+        "Composant curseur animé personnalisé",
+        "Animations Framer Motion déclenchées au scroll",
+        "Carrousel responsive avec synchronisation d'état",
+        "Illustrations SVG animées",
+        "Déployé sur Vercel avec le domaine daniloncc.com",
+        "Design responsive mobile-first"
+      ]
+    }
+  }
+}

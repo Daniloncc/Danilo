@@ -1,0 +1,270 @@
+{
+  "nav": {
+    "work": "Projetos",
+    "about": "Sobre",
+    "contact": "Contato",
+    "versions": "Versões",
+    "language": "Idioma",
+    "other_versions": "Outras Versões",
+    "available": "Disponível para trabalhar"
+  },
+  "hero": {
+    "badge": "Montreal, QC · Disponível",
+    "title_1": "Construído com",
+    "title_2": "precisão",
+    "title_3": "cirúrgica",
+    "description": "Desenvolvedor full-stack com formação em <strong>odontologia e design industrial</strong>. Crio experiências digitais limpas e objetivas — de integrações de API à automação CAD. Três carreiras. Uma mentalidade.",
+    "cta_work": "Ver meus projetos",
+    "cta_contact": "Entrar em contato →",
+    "scroll": "Rolar",
+    "stats": {
+      "spoken": "Idiomas",
+      "projects": "Projetos",
+      "careers": "Carreiras"
+    },
+    "stack": {
+      "title": "Stack técnica",
+      "backend": "Back-end",
+      "frontend": "Front-end",
+      "tools": "Ferramentas"
+    }
+  },
+  "projects": {
+    "label": "Trabalhos selecionados",
+    "title_1": "Projetos de",
+    "title_2": "desenvolvimento web",
+    "live": "Ver →",
+    "github": "GitHub →",
+    "already_here": "Você já está aqui"
+  },
+  "about": {
+    "label": "Sobre",
+    "title_1": "Uma trajetória",
+    "title_2": "incomum",
+    "description": "Da odontologia no Brasil ao design industrial e ao desenvolvimento web em Montreal — meu caminho foi tudo menos linear. Cada carreira me deu uma perspectiva diferente: precisão da medicina, estética do design e lógica do código. O resultado: um desenvolvedor que pensa em sistemas e obceca com detalhes.",
+    "timeline": [
+      {
+        "year": "2026",
+        "title": "Desenvolvimento Web — Collège Maisonneuve",
+        "sub": "Projetos full-stack, APIs REST, MVC & trabalho em equipe ágil"
+      },
+      {
+        "year": "2022",
+        "title": "Designer Industrial - EMSOM",
+        "sub": "Modelagem 3D, desenhos técnicos 2D & prototipagem"
+      },
+      {
+        "year": "2013",
+        "title": "Dentista - UEFS",
+        "sub": "Cirurgia oral, próteses & cuidados restauradores"
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "Depoimentos",
+    "title": "O que dizem",
+    "leave": "Deixar um depoimento",
+    "your_voice": "Sua voz",
+    "modal_title": "Deixar um depoimento",
+    "name_placeholder": "Seu nome",
+    "role_placeholder": "Seu cargo",
+    "message_placeholder": "Sua mensagem",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "thank_you": "Obrigado.",
+    "received": "Seu depoimento foi recebido.",
+    "error": "Por favor, preencha todos os campos. Obrigado."
+  },
+  "contact": {
+    "label": "Contato",
+    "title_1": "Vamos construir",
+    "title_2": "algo juntos",
+    "description": "Aberto a posições em tempo integral, projetos freelance ou apenas uma boa conversa sobre código e design.",
+    "name_label": "Nome",
+    "name_placeholder": "Seu nome",
+    "email_label": "E-mail",
+    "email_placeholder": "seu@email.com",
+    "message_label": "Mensagem",
+    "message_placeholder": "Fale-me sobre seu projeto ou oportunidade...",
+    "send": "Enviar mensagem",
+    "sending": "Enviando...",
+    "success_title": "Mensagem enviada.",
+    "success_sub": "Responderei em breve. Obrigado.",
+    "error_fields": "Por favor, preencha todos os campos. Obrigado.",
+    "error_email": "Por favor, insira um endereço de e-mail válido."
+  }, 
+  "projects_data": {
+    "vino": {
+      "type": "Projeto escolar",
+      "description": "Aplicação full-stack de gerenciamento de adega com React Hooks, Tailwind CSS e banco de dados MySQL."
+    },
+    "vino-figma": {
+      "type": "Projeto escolar · Design UI",
+      "description": "Protótipo interativo de alta fidelidade da aplicação Vino, desenvolvido no Figma antes da implementação."
+    },
+    "faceneuve": {
+      "type": "Projeto escolar",
+      "description": "Rede social fictícia para estudantes do Collège Maisonneuve, com implementação completa em Laravel."
+    },
+    "stampee": {
+      "type": "Projeto escolar",
+      "description": "Plataforma de leilão de selos raros com CRUD completo em PHP, arquitetura MVC personalizada e Twig."
+    },
+    "plantes": {
+      "type": "Projeto escolar",
+      "description": "Loja de plantas em JavaScript vanilla com catálogo dinâmico, carrinho de compras e gerenciamento de pedidos."
+    },
+    "portfolio": {
+      "type": "Projeto pessoal",
+      "description": "Portfolio pessoal desenvolvido com React, Vite, Tailwind CSS e Framer Motion."
+    }
+  },
+  "project_detail": {
+    "back": "← Voltar aos projetos",
+    "not_found_label": "404",
+    "not_found_title": "Projeto não encontrado",
+    "not_found_back": "← Voltar ao início",
+    "sidebar": {
+      "context": "Contexto",
+      "role": "Função",
+      "year": "Ano",
+      "duration": "Duração",
+      "team": "Equipe",
+      "tools": "Ferramentas",
+      "methodologies": "Metodologias",
+      "github": "GitHub",
+      "live": "Demo ao vivo",
+      "figma": "Figma",
+      "already_here": "Você já está aqui"
+    },
+    "sections": {
+      "challenge": "Desafio",
+      "approach": "Abordagem",
+      "solution": "Solução",
+      "outcome": "Resultado"
+    }
+  },
+  "projects_detail_data": {
+    "vino": {
+      "subtitle": "Aplicação full-stack de gerenciamento de adega com autenticação, filtros avançados e interface dinâmica.",
+      "meta": {
+        "context": "Projeto escolar — Collège Maisonneuve",
+        "role": "Desenvolvedor Full-Stack",
+        "duration": "8 semanas",
+        "team": "5 desenvolvedores"
+      },
+      "challenge": "Projetar uma aplicação de gerenciamento de adega utilizável por múltiplos usuários simultâneos, com uma interface intuitiva e uma arquitetura desacoplada entre o frontend React e o backend Node.js. O principal desafio foi sincronizar o estado React com as mutações da API mantendo uma experiência de usuário fluida.",
+      "approach": "Em equipe de cinco, trabalhamos em sprints Agile semanais, todos como desenvolvedores full-stack com Node.js e React. Contribuí tanto no backend quanto no frontend, como o restante da equipe. Coordenamos nosso trabalho usando a estratégia de branches Git Flow para gerenciar o desenvolvimento em paralelo.",
+      "solution": "Entregamos uma aplicação full-stack com autenticação JWT, gerenciamento completo de vinhos (CRUD), um sistema de filtros e busca avançada, e uma interface responsiva em Tailwind CSS. A arquitetura desacoplada permite manutenção independente do frontend e do backend.",
+      "outcome": "Aplicação implantada no Render com todas as funcionalidades planejadas. O projeto demonstrou nossa capacidade de trabalhar em equipe em uma stack moderna e entregar um produto completo em condições reais.",
+      "outcomes": [
+        "Arquitetura frontend / backend desacoplada",
+        "Autenticação JWT segura",
+        "Implantado em produção no Render",
+        "Desenvolvido em equipe de 5 com Git Flow"
+      ]
+    },
+    "vino-figma": {
+      "subtitle": "Protótipo interativo de alta fidelidade para o app Vino, projetado no Figma antes da implementação — do wireframe ao design final.",
+      "meta": {
+        "context": "Projeto escolar — Collège Maisonneuve",
+        "role": "Designer UI/UX",
+        "duration": "2 semanas",
+        "team": "Solo"
+      },
+      "challenge": "Antes de escrever uma única linha de código, a equipe precisava de uma visão compartilhada da aplicação. O desafio foi projetar uma interface coerente para um app de adega — com navegação intuitiva, identidade visual forte e um protótipo clicável que os desenvolvedores pudessem seguir de perto.",
+      "approach": "Comecei definindo os principais fluxos de usuário (cadastro, adicionar vinho, filtragem, perfil), depois produzi wireframes de baixa fidelidade para validar a estrutura com a equipe. Com a navegação aprovada, passei para alta fidelidade com a paleta de cores, tipografia e componentes reutilizáveis.",
+      "solution": "Um protótipo Figma interativo completo cobrindo todas as telas da aplicação: onboarding, login, dashboard, lista de vinhos, visualização detalhada, filtros e perfil do usuário. Cada componente foi projetado para ser reutilizável e facilmente traduzível em código.",
+      "outcome": "O protótipo serviu como referência durante todo o desenvolvimento, reduzindo idas e vindas entre design e código. A equipe pôde implementar interfaces com visão clara, o que acelerou o desenvolvimento e garantiu consistência visual no produto final.",
+      "outcomes": [
+        "Protótipo interativo clicável de ponta a ponta",
+        "Componentes Figma reutilizáveis",
+        "Fluxos de usuário completos definidos antecipadamente",
+        "Referência de design para a equipe de desenvolvimento"
+      ]
+    },
+    "faceneuve": {
+      "subtitle": "Rede social fictícia bilíngue para estudantes do Collège Maisonneuve, com implementação completa em Laravel incluindo controle de acesso por função, notificações por e-mail e gerenciamento de documentos PDF.",
+      "meta": {
+        "context": "Projeto escolar — Collège Maisonneuve",
+        "role": "Desenvolvedor Full-Stack & Designer UI",
+        "duration": "3 semanas",
+        "team": "Solo"
+      },
+      "challenge": "Liderar um projeto de ponta a ponta cobrindo tanto design quanto desenvolvimento: criar uma interface única e coesa combinando vários templates Bootstrap e toques de design pessoais, depois implementá-la fielmente no Laravel sem perder a identidade visual. A plataforma também precisava suportar dois idiomas, renderização de UI dinâmica baseada em função e funcionalidades de gerenciamento de documentos.",
+      "approach": "Em vez de projetar do zero em uma ferramenta de design, referenciei três templates Bootstrap diferentes e os mesclei, adicionando minhas próprias personalizações para obter uma aparência distinta e coerente. Com a direção visual estabelecida, configurei o framework Laravel com migrações, modelos e views Blade, usando Twig para gerenciar variáveis de template. Em seguida, adicionei suporte bilíngue, lógica de exibição por função, e funcionalidades de e-mail e PDF.",
+      "solution": "Uma plataforma web bilíngue responsiva construída com Laravel e Bootstrap, com interface única criada mesclando e personalizando vários templates Bootstrap. Alimentada por Twig para gerenciamento dinâmico de variáveis, a aplicação suporta notificações por e-mail, upload e download de documentos PDF, e adapta sua interface com base no papel do usuário autenticado.",
+      "outcome": "O projeto demonstrou minha capacidade de gerenciar o fluxo completo — das decisões de design visual à implementação full-stack. Fortaleceu minhas habilidades na construção de aplicações Laravel confiáveis com funcionalidades avançadas como suporte multilíngue, gerenciamento de documentos e lógica de interface orientada por funções.",
+      "outcomes": [
+        "Interface única criada combinando e personalizando três templates Bootstrap",
+        "Plataforma bilíngue (francês e inglês) com suporte completo à troca de idioma",
+        "Gerenciamento de exibição por função — UI se adapta dinamicamente com base no papel do usuário",
+        "Sistema de notificação por e-mail integrado no backend Laravel",
+        "Funcionalidade de upload, gerenciamento e download de documentos PDF",
+        "Twig usado para gerenciamento flexível e manutenível de variáveis de template",
+        "Arquitetura MVC Laravel 10 completa",
+        "Interface responsiva construída com Bootstrap 5",
+        "Desenvolvimento de ponta a ponta: análise de requisitos → integração de UI → implementação backend"
+      ]
+    },
+    "stampee": {
+      "subtitle": "Plataforma de leilão de selos raros com autenticação, gerenciamento de favoritos e mensagem automática ao vencedor.",
+      "meta": {
+        "context": "Projeto escolar — Collège Maisonneuve",
+        "role": "Desenvolvedor Full-Stack",
+        "duration": "4 semanas",
+        "team": "Solo"
+      },
+      "challenge": "Projetar uma arquitetura MVC do zero em PHP sem framework, gerenciando manualmente o roteamento, a separação das camadas model/view/controller e a segurança dos formulários. O objetivo era entender profundamente as bases de um framework antes de usar um.",
+      "approach": "Comecei modelando o banco de dados e definindo as rotas, depois construí os controllers e models PHP antes de integrar Twig para as views. Cada funcionalidade foi testada manualmente com Postman para validar a lógica backend.",
+      "solution": "Uma plataforma de leilão completa permitindo que visitantes naveguem pelos selos, e usuários cadastrados criem leilões, façam lances, gerenciem seus favoritos e recebam automaticamente uma mensagem ao vencer um leilão.",
+      "outcome": "Projeto entregue com CRUD completo, autenticação segura e lógica de leilão funcional. Esta experiência consolidou meu entendimento dos padrões MVC que uso diariamente com Laravel.",
+      "outcomes": [
+        "Arquitetura MVC PHP personalizada, sem framework",
+        "Sistema de leilão com cronômetro",
+        "Mensagem automática ao vencedor",
+        "CRUD completo em selos e perfis"
+      ]
+    },
+    "plantes": {
+      "subtitle": "Primeiro projeto JavaScript vanilla — uma loja de plantas com catálogo dinâmico, carrinho interativo e página de pedidos.",
+      "meta": {
+        "context": "Projeto escolar — Collège Maisonneuve",
+        "role": "Desenvolvedor Frontend",
+        "duration": "5 semanas - início do programa",
+        "team": null
+      },
+      "challenge": "Construir uma loja online totalmente funcional sem nenhum framework — usando apenas JavaScript nativo para gerenciar o catálogo, carrinho de compras e todas as interações do usuário.",
+      "approach": "Manipulação direta do DOM com JavaScript ES6, organizando o código em módulos funcionais, e persistindo o estado do carrinho usando localStorage.",
+      "solution": "Uma aplicação multi-páginas com catálogo de plantas filtrável, carrinho dinâmico atualizado em tempo real e página de finalização de pedido.",
+      "outcome": "Projeto implantado no Netlify. Primeira experiência completa em JavaScript vanilla, estabelecendo as bases da lógica frontend antes de aprender frameworks modernos.",
+      "outcomes": [
+        "Catálogo dinâmico de plantas",
+        "Carrinho interativo com localStorage",
+        "HTML/CSS/JS multi-páginas",
+        "Implantado no Netlify"
+      ]
+    },
+    "portfolio": {
+      "subtitle": "Portfolio pessoal projetado e construído do zero com React e Framer Motion — com ilustrações SVG animadas.",
+      "meta": {
+        "context": "Projeto pessoal",
+        "role": "Desenvolvedor Full-Stack & Designer UI",
+        "duration": "Em andamento",
+        "team": "Solo"
+      },
+      "challenge": "Em um mercado saturado de portfolios de desenvolvedores, se misturar na multidão é o verdadeiro risco. O desafio foi construir algo que pare o scroll — não pelo excesso, mas pela contenção. Um design tão pensado e preciso que sua simplicidade se torna a declaração.",
+      "approach": "Construído com abordagem mobile-first usando React e Vite. As animações foram gerenciadas com Framer Motion, disparando em eventos de scroll e carregamento. Componentes SVG personalizados foram projetados para animar independentemente, adicionando personalidade sem comprometer a performance.",
+      "solution": "Um portfolio single-page totalmente responsivo com cursor animado personalizado, animações Framer Motion disparadas no scroll, um carrossel de projetos interativo, e identidade visual única construída em torno de uma paleta creme e verde sálvia.",
+      "outcome": "Implantado no Vercel com domínio personalizado. O portfolio demonstra tanto habilidades técnicas quanto sensibilidade de design, servindo como demonstração ao vivo da stack e abordagem usadas para construí-lo.",
+      "outcomes": [
+        "Componente de cursor animado personalizado",
+        "Animações Framer Motion disparadas no scroll",
+        "Carrossel responsivo com sincronização de estado",
+        "Ilustrações SVG animadas",
+        "Implantado no Vercel com domínio daniloncc.com",
+        "Design responsivo mobile-first"
+      ]
+    }
+  }
+}
