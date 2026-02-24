@@ -1,4 +1,3 @@
-// src/data/projects.js
 export const projects = [
   {
     id: 1,
@@ -6,7 +5,7 @@ export const projects = [
     type: "College Project",
     title: "Vino",
     description:
-      "Application full-stack de gestion de cave à vin avec React Hooks, Tailwind CSS et base de données MySQL.",
+      "Full-stack wine cellar management application using React Hooks, Tailwind CSS, and a MySQL database.",
     tech: ["React", "Node.js", "MySQL", "Tailwind CSS", "REST API", "JWT"],
     github: "https://github.com/Daniloncc/Vino",
     live: null,
@@ -18,8 +17,8 @@ export const projects = [
     type: "College Project · UI Design",
     title: "Vino — Figma",
     description:
-      "Prototype interactif haute-fidélité de l'application Vino, conçu avec Figma avant l'implémentation.",
-    tech: ["Figma", "UI/UX Design", "Prototypage", "Wireframing"],
+      "High-fidelity interactive prototype of the Vino application, designed in Figma before implementation.",
+    tech: ["Figma", "UI/UX Design", "Prototyping", "Wireframing"],
     github: null,
     live: "https://www.figma.com/proto/8XfH4DnfRe7QaXz8RL2TEw/Untitled?node-id=1-1903&t=u1ojxiFYgOSVCbc0-1",
     image: "/images/macbook_vino_figma.webp",
@@ -42,7 +41,7 @@ export const projects = [
     type: "College Project",
     title: "Stampee",
     description:
-      "Plateforme d'enchères de timbres rares avec CRUD complet en PHP, architecture MVC custom et Twig.",
+      "Rare stamp auction platform with full CRUD in PHP, custom MVC architecture, and Twig.",
     tech: ["PHP", "MVC", "Twig", "MySQL", "JavaScript"],
     github: "https://github.com/Daniloncc/Stampee",
     live: null,
@@ -54,7 +53,7 @@ export const projects = [
   //   type: "College Project",
   //   title: "Todo List",
   //   description:
-  //     "Application de gestion de tâches avec authentification et CRUD complet par utilisateur.",
+  //     "Task management application with authentication and full user-specific CRUD.",
   //   tech: ["Laravel", "PHP", "MySQL", "Bootstrap", "Blade"],
   //   github: "https://github.com/Daniloncc/Todo_list",
   //   live: null,
@@ -66,7 +65,7 @@ export const projects = [
     type: "College Project",
     title: "Plant Store",
     description:
-      "Vanilla JavaScript plant store with dynamic catalogue, shopping cart and order management.",
+      "Vanilla JavaScript plant store with dynamic catalogue, shopping cart, and order management.",
     tech: ["JavaScript", "HTML5", "CSS3"],
     github: "https://github.com/Daniloncc/Premier_Projet_JS_Magasin_Plantes",
     live: "https://plantesjs.netlify.app/index.html",
