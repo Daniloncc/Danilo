@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { getProjectDetail } from "../data/projectDetails";
 
 import Nav from "../components/NavHome";
+import CustomCursor from "../components/CustomCursorWeb";
 import Footer from "../components/FooterHome";
 
 const fadeUp = {
@@ -74,6 +75,7 @@ export default function ProjectDetail() {
 
   return (
     <div className="relative bg-[#F7F5F0] min-h-screen">
+      <CustomCursor />
       <Nav />
 
       {/* ── Hero Header ─────────────────────────────────────────── */}
