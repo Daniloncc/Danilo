@@ -230,7 +230,7 @@ function PrintedContent({ progress }) {
       <g clipPath={`url(#${uid}-clip)`}>
         <g filter={`url(#${uid}-blur)`}>
           <image
-            href="/images/profil_drawing.png"
+            href="/images/profil_drawing.webp"
             x={X}
             y={Y}
             width={W}

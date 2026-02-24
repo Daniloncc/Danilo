@@ -102,7 +102,7 @@ export default function MechanicalRevealMobile() {
         <g clipPath="url(#mob-clip)">
           <g filter="url(#mob-blur)">
             <image
-              href="/images/profil_drawing.png"
+              href="/images/profil_drawing.webp"
               x={0}
               y={8}
               width={400}
