@@ -2,31 +2,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
-// ─── Static fallback data (replace with your JSON fetch if needed) ─
-const STATIC_TESTIMONIALS = [
-  {
-    id: 1,
-    name: "Sophie Tremblay",
-    role: "Project Manager · Riopel Consultant",
-    text: "Danilo brings a rare mix of technical precision and design sensibility. His CAD background shows in how methodically he structures code.",
-    page: "industrial",
-  },
-  {
-    id: 2,
-    name: "Marc Lefebvre",
-    role: "Senior Engineer · Fabrication QC",
-    text: "Working with someone who understands tolerances AND software is uncommon. Danilo bridges both worlds with real ease.",
-    page: "industrial",
-  },
-  {
-    id: 3,
-    name: "Ana Ribeiro",
-    role: "Industrial Designer · São Paulo",
-    text: "His transition from dentistry to design to code is a testament to his adaptability. A precise thinker who delivers clean work.",
-    page: "industrial",
-  },
-];
-
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: (d = 0) => ({
@@ -39,6 +14,7 @@ const fadeUp = {
 // ─── Single testimonial card ───────────────────────────────────────
 function TestimonialCard({ item, index }) {
   const [hov, setHov] = useState(false);
+
   const initials = item.name
     .split(" ")
     .map((n) => n[0])
@@ -64,7 +40,7 @@ function TestimonialCard({ item, index }) {
         overflow: "hidden",
       }}
     >
-      {/* Corner bracket accent */}
+      {/* Corner index */}
       <span
         style={{
           position: "absolute",
@@ -146,7 +122,7 @@ function TestimonialCard({ item, index }) {
               fontFamily: "'IBM Plex Sans', sans-serif",
               fontSize: "0.78rem",
               fontWeight: 600,
-              color: "rgba(255,255,255,0.85)",
+              color: hov ? "#1A1A18" : "rgba(255,255,255,0.85)",
               marginBottom: "0.1rem",
             }}
           >
@@ -190,9 +166,7 @@ function TestimonialModal({ onClose }) {
       )
       .then(() => {
         setSubmitted(true);
-        setTimeout(() => {
-          onClose();
-        }, 2500);
+        setTimeout(() => onClose(), 2500);
       })
       .catch(() => {
         setError("Something went wrong. Please try again.");
@@ -232,7 +206,7 @@ function TestimonialModal({ onClose }) {
           position: "relative",
         }}
       >
-        {/* Grid bg inside modal */}
+        {/* Grid bg */}
         <div
           style={{
             position: "absolute",
@@ -417,7 +391,6 @@ function TestimonialModal({ onClose }) {
               </button>
             </div>
 
-            {/* Error overlay */}
             <AnimatePresence>
               {error && (
                 <motion.div
@@ -460,20 +433,16 @@ function TestimonialModal({ onClose }) {
 // ─── Main Section ─────────────────────────────────────────────────
 export default function TestimonialsIndustrial({ page = "industrial" }) {
   const [showModal, setShowModal] = useState(false);
-  const [testimonialsList, setTestimonialsList] = useState(STATIC_TESTIMONIALS);
+  const [testimonialsList, setTestimonialsList] = useState([]);
 
-  // Optional: fetch from JSON
+  // ── Même logique que la page web : fetch + filter par page ──
   useEffect(() => {
     fetch("/data/testimonials.json")
       .then((res) => res.json())
-      .then((data) => {
-        const filtered = data.filter((t) => t.page === page);
-        if (filtered.length > 0) setTestimonialsList(filtered);
-      })
-      .catch(() => {
-        // fallback to static data — already set
-      });
-  }, [page]);
+      .then((data) => setTestimonialsList(data));
+  }, []);
+
+  const filtered = testimonialsList.filter((t) => t.page === page);
 
   return (
     <section
@@ -486,7 +455,7 @@ export default function TestimonialsIndustrial({ page = "industrial" }) {
         overflow: "hidden",
       }}
     >
-      {/* Subtle grid bg */}
+      {/* Grid bg */}
       <div
         style={{
           position: "absolute",
@@ -519,7 +488,7 @@ export default function TestimonialsIndustrial({ page = "industrial" }) {
               marginBottom: "0.25rem",
             }}
           >
-            // 02 — FIELD REPORTS
+            // 03 — FIELD REPORTS
           </p>
           <h2
             style={{
@@ -535,7 +504,7 @@ export default function TestimonialsIndustrial({ page = "industrial" }) {
           </h2>
         </motion.div>
 
-        {/* Cards grid — same pattern as CADTool */}
+        {/* Cards grid */}
         <div
           style={{
             display: "grid",
@@ -546,12 +515,12 @@ export default function TestimonialsIndustrial({ page = "industrial" }) {
             marginBottom: "2rem",
           }}
         >
-          {testimonialsList.map((item, i) => (
+          {filtered.map((item, i) => (
             <TestimonialCard key={item.id} item={item} index={i} />
           ))}
         </div>
 
-        {/* CTA button */}
+        {/* CTA */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -576,13 +545,13 @@ export default function TestimonialsIndustrial({ page = "industrial" }) {
               transition: "all 0.4s",
             }}
             onMouseEnter={(e) => {
-              e.target.style.borderColor = "#C7521A";
               e.target.style.background = "transparent";
-              e.target.style.color = "#1A1A18";
+              e.target.style.borderColor = "#C7521A";
+              e.target.style.color = "#C7521A";
             }}
             onMouseLeave={(e) => {
-              e.target.style.borderColor = "rgba(255,255,255,0.12)";
               e.target.style.background = "#C7521A";
+              e.target.style.borderColor = "rgba(255,255,255,0.12)";
               e.target.style.color = "rgba(255,255,255,0.9)";
             }}
           >
