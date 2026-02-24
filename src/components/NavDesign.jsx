@@ -9,7 +9,7 @@ export default function Nav() {
 
   const versions = [
     { label: "Web Developer", href: "/" },
-    { label: "Dentist", href: "/dentist" },
+    { label: "Dentist", href: "#" },
   ];
 
   useEffect(() => {

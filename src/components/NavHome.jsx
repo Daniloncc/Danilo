@@ -4,7 +4,7 @@ import Logo from "../components/LogoHome";
 
 const versions = [
   { label: "Industrial Designer", href: "/industrial" },
-  { label: "Dentist", href: "/dentist" },
+  { label: "Dentist", href: "#" },
 ];
 
 export default function Navbar() {
