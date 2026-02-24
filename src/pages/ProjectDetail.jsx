@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
-import { getProjectDetail } from "../data/projectDetails";
+import { useTranslation } from "react-i18next";
+import { projectDetails } from "../data/projectDetails";
 
 import Nav from "../components/NavHome";
 import CustomCursor from "../components/CustomCursorWeb";
@@ -46,39 +47,77 @@ function SectionHeading({ label }) {
 
 export default function ProjectDetail() {
   const { id } = useParams();
-  const project = getProjectDetail(id);
+  const { t } = useTranslation();
+
+  // Find static data (slug, tech, images, links) from projectDetails
+  const staticProject = projectDetails.find(
+    (p) => p.slug === id || String(p.id) === String(id)
+  );
+
+  const navigate = useNavigate();
+
+  const handleBackToWork = () => {
+    navigate("/");
+    setTimeout(() => {
+      const el = document.getElementById("work");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
 
-  if (!project) {
+  if (!staticProject) {
     return (
       <div className="min-h-screen bg-[#F7F5F0] flex items-center justify-center px-6">
         <div className="text-center">
           <p className="text-[11px] uppercase tracking-widest text-[#6B6B6B] mb-4">
-            404
+            {t("project_detail.not_found_label")}
           </p>
           <h1 className="font-serif text-4xl text-[#1C1C1E] mb-6">
-            Project not found
+            {t("project_detail.not_found_title")}
           </h1>
           <Link
             to="/"
             className="text-[11px] uppercase tracking-widest text-[#7A9E7E] hover:text-[#165323] transition-colors"
           >
-            ← Back to home
+            {t("project_detail.not_found_back")}
           </Link>
         </div>
       </div>
     );
   }
+  const slug = staticProject.slug;
+
+  // Translated text — pulled from JSON via slug key
+  const subtitle = t(`projects_detail_data.${slug}.subtitle`);
+  const challenge = t(`projects_detail_data.${slug}.challenge`);
+  const approach = t(`projects_detail_data.${slug}.approach`);
+  const solution = t(`projects_detail_data.${slug}.solution`);
+  const outcome = t(`projects_detail_data.${slug}.outcome`);
+  const outcomes = t(`projects_detail_data.${slug}.outcomes`, {
+    returnObjects: true,
+  });
+  const metaTrans = t(`projects_detail_data.${slug}.meta`, {
+    returnObjects: true,
+  });
+
+  // Sidebar rows — label from JSON, value from translated meta
+  const sidebarRows = [
+    { labelKey: "project_detail.sidebar.context", value: metaTrans?.context },
+    { labelKey: "project_detail.sidebar.role", value: metaTrans?.role },
+    { labelKey: "project_detail.sidebar.year", value: staticProject.meta.year },
+    { labelKey: "project_detail.sidebar.duration", value: metaTrans?.duration },
+    { labelKey: "project_detail.sidebar.team", value: metaTrans?.team },
+  ];
 
   return (
     <div className="relative bg-[#F7F5F0] min-h-screen">
       <CustomCursor />
       <Nav />
 
-      {/* ── Hero Header ─────────────────────────────────────────── */}
+      {/* ── Hero Header ───────────────────────────────────────────── */}
       <section className="pt-24 md:pt-32 px-6 md:px-16 pb-10 md:pb-16 border-b border-[#E2DDD6]">
         <motion.div
           variants={fadeUp}
@@ -87,12 +126,12 @@ export default function ProjectDetail() {
           custom={0}
         >
           <div className="text-center md:text-left">
-            <Link
-              to="/#work"
-              className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors mb-8 md:mb-10 block"
+            <button
+              onClick={handleBackToWork}
+              className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors mb-8 md:mb-10 bg-transparent border-none cursor-pointer"
             >
-              ← Back to projects
-            </Link>
+              {t("project_detail.back")}
+            </button>
           </div>
         </motion.div>
 
@@ -109,10 +148,10 @@ export default function ProjectDetail() {
                 className="font-serif font-light text-[#1C1C1E] leading-[0.92] tracking-tight mb-6"
                 style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
               >
-                {project.title}
+                {staticProject.title}
               </h1>
               <p className="text-[16px] text-[#6B6B6B] leading-relaxed mb-10 md:mb-14">
-                {project.subtitle}
+                {subtitle}
               </p>
             </div>
 
@@ -123,9 +162,11 @@ export default function ProjectDetail() {
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                <SectionHeading label="Challenge" />
+                <SectionHeading
+                  label={t("project_detail.sections.challenge")}
+                />
                 <p className="text-[16px] text-[#6B6B6B] leading-relaxed">
-                  {project.challenge}
+                  {challenge}
                 </p>
               </motion.div>
             </div>
@@ -139,17 +180,11 @@ export default function ProjectDetail() {
             custom={0.15}
             className="flex flex-col gap-5 bg-white border border-[#E2DDD6] p-6 md:p-7"
           >
-            {[
-              { label: "Context", value: project.meta.context },
-              { label: "Role", value: project.meta.role },
-              { label: "Year", value: project.meta.year },
-              { label: "Duration", value: project.meta.duration },
-              { label: "Team", value: project.meta.team },
-            ].map(({ label, value }) =>
+            {sidebarRows.map(({ labelKey, value }) =>
               value ? (
-                <div key={label}>
+                <div key={labelKey}>
                   <p className="text-[10px] uppercase tracking-widest text-[#6B6B6B] mb-0.5">
-                    {label}
+                    {t(labelKey)}
                   </p>
                   <p className="text-[14px] text-[#165323] font-medium">
                     {value}
@@ -158,29 +193,31 @@ export default function ProjectDetail() {
               ) : null
             )}
 
+            {/* Tools */}
             <div className="border-t border-[#E2DDD6] pt-5">
-              <p className="text-[10px] uppercase tracking-widest text-[#6B6B6B] mb-3 flex items-center gap-2">
-                Tools
+              <p className="text-[10px] uppercase tracking-widest text-[#6B6B6B] mb-3">
+                {t("project_detail.sidebar.tools")}
               </p>
               <div className="flex flex-wrap gap-1.5">
-                {project.tech.map((t) => (
+                {staticProject.tech.map((tech) => (
                   <span
-                    key={t}
+                    key={tech}
                     className="text-[11px] px-2.5 py-1 border border-[#E2DDD6] text-[#6B6B6B] hover:border-[#7A9E7E] hover:text-[#7A9E7E] transition-colors bg-[#F7F5F0]"
                   >
-                    {t}
+                    {tech}
                   </span>
                 ))}
               </div>
             </div>
 
-            {project.methodologies?.length > 0 && (
+            {/* Methodologies */}
+            {staticProject.methodologies?.length > 0 && (
               <div className="border-t border-[#E2DDD6] pt-5">
-                <p className="text-[10px] uppercase tracking-widest text-[#6B6B6B] mb-3 flex items-center gap-2">
-                  Methodologies
+                <p className="text-[10px] uppercase tracking-widest text-[#6B6B6B] mb-3">
+                  {t("project_detail.sidebar.methodologies")}
                 </p>
                 <ul className="flex flex-col gap-1.5">
-                  {project.methodologies.map((m) => (
+                  {staticProject.methodologies.map((m) => (
                     <li
                       key={m}
                       className="text-[12px] text-[#165323] flex items-center gap-2"
@@ -192,39 +229,43 @@ export default function ProjectDetail() {
               </div>
             )}
 
+            {/* Links */}
             <div className="border-t border-[#E2DDD6] pt-5 flex flex-col gap-2">
-              {project.meta.github && (
+              {staticProject.meta.github && (
                 <a
-                  href={project.meta.github}
+                  href={staticProject.meta.github}
                   target="_blank"
                   rel="noreferrer"
                   className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors flex items-center gap-2"
                 >
-                  <span className="text-[#165323]">→</span> GitHub
+                  <span className="text-[#165323]">→</span>{" "}
+                  {t("project_detail.sidebar.github")}
                 </a>
               )}
-              {project.slug === "portfolio" ? (
+              {staticProject.slug === "portfolio" ? (
                 <span className="text-[11px] uppercase tracking-widest text-[#7A9E7E]">
-                  You're already here
+                  {t("project_detail.sidebar.already_here")}
                 </span>
-              ) : project.live ? (
+              ) : staticProject.meta.live ? (
                 <a
-                  href={project.meta.live}
+                  href={staticProject.meta.live}
                   target="_blank"
                   rel="noreferrer"
                   className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors flex items-center gap-2"
                 >
-                  <span className="text-[#165323]">→</span> Live Demo
+                  <span className="text-[#165323]">→</span>{" "}
+                  {t("project_detail.sidebar.live")}
                 </a>
               ) : null}
-              {project.meta.figma && (
+              {staticProject.meta.figma && (
                 <a
-                  href={project.meta.figma}
+                  href={staticProject.meta.figma}
                   target="_blank"
                   rel="noreferrer"
                   className="text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] transition-colors flex items-center gap-2"
                 >
-                  <span className="text-[#165323]">→</span> Figma
+                  <span className="text-[#165323]">→</span>{" "}
+                  {t("project_detail.sidebar.figma")}
                 </a>
               )}
             </div>
@@ -232,10 +273,8 @@ export default function ProjectDetail() {
         </div>
       </section>
 
-      {/* ── Screenshots ───────────────────────────────── */}
-      {project.slug === "portfolio" ? (
-        <span></span>
-      ) : (
+      {/* ── Cover Image ───────────────────────────────────────────── */}
+      {staticProject.slug !== "portfolio" && (
         <motion.section
           variants={fadeUp}
           initial="hidden"
@@ -245,8 +284,8 @@ export default function ProjectDetail() {
         >
           <div className="relative w-full aspect-[16/9] md:aspect-[16/7] bg-[#E2DDD6] overflow-hidden">
             <img
-              src={project.coverImage}
-              alt={project.title}
+              src={staticProject.coverImage}
+              alt={staticProject.title}
               className="w-full h-full object-contain"
             />
             <span className="absolute top-3 left-3 md:top-4 md:left-4 w-5 h-5 md:w-6 md:h-6 border-t border-l border-[#7A9E7E]" />
@@ -257,8 +296,8 @@ export default function ProjectDetail() {
         </motion.section>
       )}
 
-      {/* ── Cover Image ─────────────────────────────────────────── */}
-      {project.approach && (
+      {/* ── Approach ──────────────────────────────────────────────── */}
+      {approach && (
         <section className="px-6 md:px-16 py-12 md:py-20 border-b border-[#E2DDD6] bg-white">
           <div className="flex flex-wrap gap-8 md:gap-12 items-start">
             <div className="w-full md:flex-1 md:min-w-[280px] md:max-w-3xl">
@@ -268,14 +307,14 @@ export default function ProjectDetail() {
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                <SectionHeading label="Approach" />
+                <SectionHeading label={t("project_detail.sections.approach")} />
                 <p className="text-[16px] text-[#6B6B6B] leading-relaxed">
-                  {project.approach}
+                  {approach}
                 </p>
               </motion.div>
             </div>
 
-            {project.screenshots?.length > 0 && (
+            {staticProject.screenshots?.length > 0 && (
               <motion.div
                 variants={fadeUp}
                 initial="hidden"
@@ -284,11 +323,11 @@ export default function ProjectDetail() {
                 custom={0.1}
                 className="w-full md:flex-1 md:min-w-[280px] flex flex-wrap gap-4"
               >
-                {project.screenshots.map((src, i) => (
+                {staticProject.screenshots.map((src, i) => (
                   <div key={i} className="w-full bg-[#E2DDD6] overflow-hidden">
                     <img
                       src={src}
-                      alt={`${project.title} screenshot ${i + 1}`}
+                      alt={`${staticProject.title} screenshot ${i + 1}`}
                       className="w-full h-auto object-cover"
                     />
                   </div>
@@ -299,8 +338,8 @@ export default function ProjectDetail() {
         </section>
       )}
 
-      {/* ── Solution ─────────────────────────────────────────────── */}
-      {project.solution && (
+      {/* ── Solution ──────────────────────────────────────────────── */}
+      {solution && (
         <section className="px-6 md:px-16 py-12 md:py-20 border-b border-[#E2DDD6]">
           <div className="max-w-3xl">
             <motion.div
@@ -309,12 +348,12 @@ export default function ProjectDetail() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <SectionHeading label="Solution" />
+              <SectionHeading label={t("project_detail.sections.solution")} />
               <p className="text-[16px] text-[#6B6B6B] leading-relaxed mb-8">
-                {project.solution}
+                {solution}
               </p>
             </motion.div>
-            {project.outcomes?.length > 0 && (
+            {Array.isArray(outcomes) && outcomes.length > 0 && (
               <motion.div
                 variants={fadeUp}
                 initial="hidden"
@@ -323,7 +362,7 @@ export default function ProjectDetail() {
                 custom={0.1}
               >
                 <ul className="flex flex-col gap-2 mt-4">
-                  {project.outcomes.map((item, i) => (
+                  {outcomes.map((item, i) => (
                     <li
                       key={i}
                       className="flex items-start gap-3 text-[14px] text-[#165323]"
@@ -339,8 +378,8 @@ export default function ProjectDetail() {
         </section>
       )}
 
-      {/* ── Outcome ──────────────────────────────────────────────── */}
-      {project.outcome && (
+      {/* ── Outcome ───────────────────────────────────────────────── */}
+      {outcome && (
         <section className="px-6 md:px-16 py-12 md:py-20 border-b border-[#E2DDD6] bg-[#1C1C1E]">
           <div className="max-w-3xl text-center md:text-left">
             <motion.div
@@ -358,7 +397,7 @@ export default function ProjectDetail() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    Outcome
+                    {t("project_detail.sections.outcome")}
                   </motion.h2>
                 </div>
                 <div className="relative h-px bg-[#F7F5F0]/10">
@@ -376,15 +415,15 @@ export default function ProjectDetail() {
                 </div>
               </div>
               <p className="text-[16px] text-[#F7F5F0]/70 leading-relaxed">
-                {project.outcome}
+                {outcome}
               </p>
             </motion.div>
-            <Link
-              to="/#work"
-              className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest text-[#7A9E7E] hover:text-[#6B6B6B] transition-colors mt-10 block"
+            <button
+              onClick={handleBackToWork}
+              className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest text-[#7A9E7E] hover:text-[#6B6B6B] transition-colors mt-10 bg-transparent border-none cursor-pointer"
             >
-              ← Back to projects
-            </Link>
+              {t("project_detail.back")}
+            </button>
           </div>
         </section>
       )}
