@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { projects } from "../data/projects";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import { projects } from "../data/projects";
 
 import Nav from "../components/NavHome";
+import CustomCursor from "../components/CustomCursorWeb";
 import ProjectsHeaderSVG from "../components/ProjectsHeaderSVG";
 import Caroussel from "../components/Caroussel";
 import Footer from "../components/FooterHome";
@@ -150,7 +151,7 @@ function Hero() {
                 ],
               },
               {
-                label: "Outils",
+                label: "Tools",
                 skills: [
                   "Git",
                   "GitHub",
@@ -365,7 +366,7 @@ function About() {
               sub: "3D modeling, 2D technical drawings & prototyping",
             },
             {
-              year: "2008",
+              year: "2013",
               title: "Dentist - UEFS",
               sub: "Oral surgery, prosthetics & restorative care",
             },
@@ -826,6 +827,7 @@ function Contact() {
 export default function Home() {
   return (
     <div className="relative">
+      <CustomCursor />
       <Nav />
       <Hero />
       <Projects />
