@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { projects } from "../data/projectsDesign";
 import Nav from "../components/NavDesign";
 
@@ -26,7 +27,7 @@ function IndustrialCursor() {
       background: "#C7521A",
       borderRadius: "0",
       pointerEvents: "none",
-      zIndex: "9999",
+      zIndex: "5",
       transform: "translate(-50%, -50%)",
       transition: "width 0.15s, height 0.15s",
     });
@@ -37,7 +38,7 @@ function IndustrialCursor() {
       border: "1px solid #C7521A",
       borderRadius: "0",
       pointerEvents: "none",
-      zIndex: "9998",
+      zIndex: "4",
       transform: "translate(-50%, -50%)",
       opacity: "0.6",
     });
@@ -98,26 +99,6 @@ function IndustrialCursor() {
   return null;
 }
 
-// ─── Data ─────────────────────────────────────────────────────────
-const cadTools = [
-  {
-    name: "AutoCAD",
-    desc: "2D/3D drafting, technical drawings, layout and plan preparation",
-  },
-  {
-    name: "SolidWorks",
-    desc: "Parametric 3D modeling, assemblies, manufacturing-ready drawings",
-  },
-  {
-    name: "Inventor",
-    desc: "3D modeling, sheet metal design, detailed drawings and documentation",
-  },
-  {
-    name: "Technical Drawing",
-    desc: "2D detailing, dimensioning, tolerances, and production-ready plans",
-  },
-];
-
 const specTags2 = [
   "AutoCAD",
   "Inventor",
@@ -139,10 +120,13 @@ const fadeUp = {
 
 // ─── Hero ─────────────────────────────────────────────────────────
 function Hero() {
+  const { t } = useTranslation();
+  const identity = t("industrial.hero.identity", { returnObjects: true });
+
   return (
     <section className="relative z-1 pt-24 md:pt-28 px-6 md:px-12 pb-0">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center pb-10 border-b border-black/10">
-        {/* ── Colonne GAUCHE — texte ── */}
+        {/* Left */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -158,8 +142,7 @@ function Hero() {
               letterSpacing: "0.08em",
             }}
           >
-            // <span style={{ color: "#C7521A" }}>PORTFOLIO</span> — INDUSTRIAL
-            DESIGN & DEVELOPMENT
+            {t("industrial.hero.label")}
           </p>
           <h1
             style={{
@@ -184,7 +167,7 @@ function Hero() {
               letterSpacing: "0.1em",
             }}
           >
-            // Industrial Designer · CAD & 3D/2D Modeling
+            {t("industrial.hero.subtitle")}
           </p>
           <p
             style={{
@@ -195,20 +178,16 @@ function Hero() {
               borderLeft: "2px solid #C7521A",
               paddingLeft: "1rem",
             }}
-          >
-            I come from industrial design, <b>3D/2D modeling</b>, and
-            problem-solving. Today, I apply the same design logic to digital
-            systems — learning <b>Python</b> to streamline processes, improve
-            efficiency, and build smarter tools.
-          </p>
-
-          {/* ── Version MOBILE — sous le texte, cachée sur desktop ── */}
+            dangerouslySetInnerHTML={{
+              __html: t("industrial.hero.description"),
+            }}
+          />
           <div className="mt-8 md:hidden">
             <MechanicalRevealMobile />
           </div>
         </motion.div>
 
-        {/* ── Colonne DROITE — cachée sur mobile ── */}
+        {/* Right */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -219,6 +198,7 @@ function Hero() {
           <MechanicalReveal />
         </motion.div>
       </div>
+
       {/* Specs */}
       <motion.div
         variants={fadeUp}
@@ -237,11 +217,10 @@ function Hero() {
             color: "#9A9A90",
           }}
         >
-          <span>Technical Specifications</span>
-          <span>REV_2026.02</span>
+          <span>{t("industrial.hero.specs_title")}</span>
+          <span>{t("industrial.hero.specs_rev")}</span>
         </div>
 
-        {/* Grid 2 cols on md */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Identity */}
           <div>
@@ -255,13 +234,13 @@ function Hero() {
                 textTransform: "uppercase",
               }}
             >
-              01 — Identity
+              {t("industrial.hero.identity_label")}
             </p>
             {[
-              ["name", "Danilo Costa"],
-              ["location", "Montreal, QC, CA"],
-              ["languages", "PT / EN / FR / ES"],
-              ["status", "● Open to work", true],
+              ["name", identity.name],
+              ["location", identity.location],
+              ["languages", identity.languages],
+              ["status", identity.status, true],
             ].map(([k, v, accent]) => (
               <div
                 key={k}
@@ -304,11 +283,11 @@ function Hero() {
                 textTransform: "uppercase",
               }}
             >
-              02 — CAD & Design Stack
+              {t("industrial.hero.stack_label")}
             </p>
             <div className="flex flex-wrap gap-1.5">
-              {specTags2.map((t) => (
-                <SpecTag key={t}>{t}</SpecTag>
+              {specTags2.map((tag) => (
+                <SpecTag key={tag}>{tag}</SpecTag>
               ))}
             </div>
           </div>
@@ -342,6 +321,8 @@ function SpecTag({ children }) {
 
 // ─── Projects ─────────────────────────────────────────────────────
 function Projects() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="work"
@@ -357,7 +338,7 @@ function Projects() {
             letterSpacing: "0.1em",
           }}
         >
-          // 01 — SELECTED WORK
+          {t("industrial.projects.label")}
         </p>
         <h2
           style={{
@@ -368,8 +349,12 @@ function Projects() {
             color: "#FAFAF8",
           }}
         >
-          Design &<br />
-          <strong style={{ fontWeight: 600 }}>Industrial</strong> Projects
+          {t("industrial.projects.title_1")}
+          <br />
+          <strong style={{ fontWeight: 600 }}>
+            {t("industrial.projects.title_2")}
+          </strong>{" "}
+          {t("industrial.projects.title_3")}
         </h2>
         <span
           style={{
@@ -378,7 +363,7 @@ function Projects() {
             color: "#C7521A",
           }}
         >
-          * images are for illustration purposes only *
+          {t("industrial.projects.disclaimer")}
         </span>
       </div>
 
@@ -386,8 +371,8 @@ function Projects() {
         className="grid grid-cols-1 md:grid-cols-2"
         style={{
           gap: "1px",
-          background: "rgba(26,26,24,0.12)",
-          border: "1px solid rgba(26,26,24,0.12)",
+          background: "rgba(255,255,255,0.06)",
+          border: "1px solid rgba(255,255,255,0.06)",
         }}
       >
         {projects.map((p, i) => (
@@ -399,7 +384,12 @@ function Projects() {
 }
 
 function ProjectCard({ project, index }) {
+  const { t } = useTranslation();
   const [hov, setHov] = useState(false);
+
+  const title = t(`industrial.projects_design.${project.slug}.title`);
+  const desc = t(`industrial.projects_design.${project.slug}.desc`);
+
   return (
     <motion.div
       data-hover
@@ -419,7 +409,7 @@ function ProjectCard({ project, index }) {
       <div className="w-full h-52 md:h-64">
         <img
           src={project.image}
-          alt=""
+          alt={title}
           className="w-full h-full object-cover object-center"
         />
       </div>
@@ -444,7 +434,7 @@ function ProjectCard({ project, index }) {
             letterSpacing: "-0.01em",
           }}
         >
-          {project.title}
+          {title}
         </h3>
         <p
           style={{
@@ -454,12 +444,12 @@ function ProjectCard({ project, index }) {
             marginBottom: "1rem",
           }}
         >
-          {project.desc}
+          {desc}
         </p>
         <div className="flex flex-wrap gap-1.5">
-          {project.tags.map((t) => (
+          {project.tags.map((tag) => (
             <span
-              key={t}
+              key={tag}
               style={{
                 fontFamily: "'IBM Plex Mono', monospace",
                 fontSize: "0.6rem",
@@ -469,7 +459,7 @@ function ProjectCard({ project, index }) {
                 letterSpacing: "0.05em",
               }}
             >
-              {t}
+              {tag}
             </span>
           ))}
         </div>
@@ -480,6 +470,9 @@ function ProjectCard({ project, index }) {
 
 // ─── CAD Section ──────────────────────────────────────────────────
 function CADSection() {
+  const { t } = useTranslation();
+  const cadTools = t("industrial.cad.tools", { returnObjects: true });
+
   return (
     <section
       id="cad"
@@ -506,7 +499,7 @@ function CADSection() {
               letterSpacing: "0.1em",
             }}
           >
-            // 02 — CAD & TOOLS
+            {t("industrial.cad.label")}
           </p>
           <h2
             className="mb-4"
@@ -517,10 +510,10 @@ function CADSection() {
             }}
           >
             <strong style={{ fontWeight: 600, color: "#C7521A" }}>
-              Designing
+              {t("industrial.cad.title_1")}
             </strong>
             <br />
-            in 3 dimensions
+            {t("industrial.cad.title_2")}
           </h2>
           <p
             style={{
@@ -529,9 +522,7 @@ function CADSection() {
               lineHeight: 1.75,
             }}
           >
-            Industrial design taught me to think in systems and tolerances —
-            skills that transfer directly to software architecture. I bridge
-            both worlds.
+            {t("industrial.cad.description")}
           </p>
         </motion.div>
 
@@ -543,8 +534,8 @@ function CADSection() {
             border: "1px solid rgba(255,255,255,0.08)",
           }}
         >
-          {cadTools.map((t, i) => (
-            <CADTool key={i} tool={t} index={i} />
+          {cadTools.map((tool, i) => (
+            <CADTool key={i} tool={tool} index={i} />
           ))}
         </div>
       </div>
@@ -594,11 +585,9 @@ function CADTool({ tool, index }) {
   );
 }
 
-// ─── Testimonials ────────────────────────────────────────────────
-<TestimonialsIndustrial page="industrial" />;
-
 // ─── Footer ───────────────────────────────────────────────────────
 function Footer() {
+  const { t } = useTranslation();
   return (
     <footer
       className="relative z-1 px-6 py-5 flex justify-center"
@@ -615,7 +604,7 @@ function Footer() {
           letterSpacing: "0.05em",
         }}
       >
-        © 2026 DANILO COSTA — ALL RIGHTS RESERVED
+        {t("industrial.footer")}
       </p>
     </footer>
   );
@@ -623,6 +612,8 @@ function Footer() {
 
 // ─── Page ─────────────────────────────────────────────────────────
 export default function Industrial() {
+  const { t } = useTranslation();
+
   return (
     <div
       style={{
@@ -646,17 +637,17 @@ export default function Industrial() {
           background: #C7521A; color: white;
           font-family: 'IBM Plex Mono', monospace;
           font-size: 0.62rem; letter-spacing: 0.08em;
-          text-transform: uppercase; padding: 0.4rem 0.8rem; z-index: 999;
+          text-transform: uppercase; padding: 0.4rem 0.8rem; z-index: 5;
         }
       `}</style>
 
       <IndustrialCursor />
       <div className="ind-grid-bg" />
-      <div className="ind-badge">Version Design Industriel</div>
+      <div className="ind-badge">{t("industrial.badge")}</div>
       <Nav />
       <Hero />
       <Projects />
-      <TestimonialsIndustrial />
+      <TestimonialsIndustrial page="industrial" />
       <CADSection />
       <Footer />
     </div>
