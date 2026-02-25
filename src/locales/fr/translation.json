@@ -266,5 +266,88 @@
         "Design responsive mobile-first"
       ]
     }
+  },
+  "industrial": {
+    "badge": "Version Design Industriel",
+    "nav": {
+      "work": "Projets", "cad": "CAO", "versions": "Versions",
+      "other_versions": "Autres Versions", "language": "Langue",
+      "web": "Développeur Web", "dentist": "Dentiste",
+      "open_to_work": "DISPONIBLE"
+    },
+    "hero": {
+      "label": "// PORTFOLIO — DESIGN INDUSTRIEL & DÉVELOPPEMENT",
+      "subtitle": "// Designer Industriel · Modélisation CAO & 3D/2D",
+      "description": "Je viens du design industriel, de la <b>modélisation 3D/2D</b> et de la résolution de problèmes. Aujourd'hui, j'applique la même logique de design aux systèmes numériques — en apprenant <b>Python</b> pour optimiser les processus, améliorer l'efficacité et construire des outils plus intelligents.",
+      "specs_title": "Spécifications Techniques",
+      "specs_rev": "REV_2026.02",
+      "identity_label": "01 — Identité",
+      "identity": {
+        "name": "Danilo Costa",
+        "location": "Montréal, QC, CA",
+        "languages": "PT / EN / FR / ES",
+        "status": "● Disponible pour travailler"
+      },
+      "stack_label": "02 — Stack CAO & Design"
+    },
+    "projects": {
+      "label": "// 01 — TRAVAUX SÉLECTIONNÉS",
+      "title_1": "Design &",
+      "title_2": "Projets",
+      "title_3": "Industriels",
+      "disclaimer": "* les images sont à titre illustratif uniquement *"
+    },
+    "projects_design": {
+      "soft-db": {
+        "title": "Soft-DB",
+        "desc": "Chez Soft dB, j'ai analysé des plans architecturaux et industriels pour recommander le meilleur emplacement des équipements acoustiques et d'insonorisation. J'ai collaboré avec des ingénieurs pour m'assurer que chaque disposition offrait un contrôle sonore efficace et respectait les exigences du projet."
+      },
+      "maquette-virtuelle": {
+        "title": "Concepteur Industriel",
+        "desc": "En tant que concepteur industriel/dessinateur, j'ai produit des modèles 3D détaillés et des dessins techniques 2D avec Autodesk Inventor, en me concentrant sur les pièces en tôle, les assemblages et les flux de fabrication. J'ai collaboré avec des ingénieurs pour développer des conceptions fonctionnelles et préparer une documentation précise pour la production."
+      }
+    },
+    "testimonials": {
+      "label": "// 02 — RAPPORTS DE TERRAIN",
+      "title_1": "Ce que les gens",
+      "title_2": "disent",
+      "leave": "Laisser un témoignage",
+      "modal_title_1": "Laisser un",
+      "modal_title_2": "témoignage",
+      "name_placeholder": "Votre nom",
+      "role_placeholder": "Votre rôle / titre",
+      "message_placeholder": "Votre message",
+      "cancel": "Annuler",
+      "submit": "ENVOYER",
+      "thank_you": "Merci.",
+      "received": "Votre témoignage a bien été reçu.",
+      "error": "Tous les champs sont obligatoires.",
+      "error_send": "Une erreur est survenue. Veuillez réessayer."
+    },
+    "cad": {
+      "label": "// 03 — CAO & OUTILS",
+      "title_1": "Concevoir",
+      "title_2": "en 3 dimensions",
+      "description": "Le design industriel m'a appris à penser en systèmes et en tolérances — des compétences qui se transfèrent directement à l'architecture logicielle. Je fais le pont entre les deux mondes.",
+      "tools": [
+        {
+          "name": "AutoCAD",
+          "desc": "Dessin 2D/3D, plans techniques, mise en page et préparation des plans"
+        },
+        {
+          "name": "SolidWorks",
+          "desc": "Modélisation 3D paramétrique, assemblages, dessins prêts pour la fabrication"
+        },
+        {
+          "name": "Inventor",
+          "desc": "Modélisation 3D, tôlerie, dessins détaillés et documentation"
+        },
+        {
+          "name": "Dessin Technique",
+          "desc": "Détails 2D, cotation, tolérances et plans prêts pour la production"
+        }
+      ]
+    },
+    "footer": "© 2026 DANILO COSTA  — ALL RIGHTS RESERVED"
   }
 }

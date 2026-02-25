@@ -266,5 +266,88 @@
         "Diseño responsivo mobile-first"
       ]
     }
+  },
+  "industrial": {
+    "badge": "Versión Diseño Industrial",
+    "nav": {
+      "work": "Proyectos", "cad": "CAD", "versions": "Versiones",
+      "other_versions": "Otras Versiones", "language": "Idioma",
+      "web": "Desarrollador Web", "dentist": "Dentista",
+      "open_to_work": "DISPONIBLE"
+    },
+    "hero": {
+      "label": "// PORTAFOLIO — DISEÑO INDUSTRIAL & DESARROLLO",
+      "subtitle": "// Diseñador Industrial · Modelado CAD & 3D/2D",
+      "description": "Vengo del diseño industrial, el <b>modelado 3D/2D</b> y la resolución de problemas. Hoy aplico la misma lógica de diseño a los sistemas digitales — aprendiendo <b>Python</b> para optimizar procesos, mejorar la eficiencia y construir herramientas más inteligentes.",
+      "specs_title": "Especificaciones Técnicas",
+      "specs_rev": "REV_2026.02",
+      "identity_label": "01 — Identidad",
+      "identity": {
+        "name": "Danilo Costa",
+        "location": "Montreal, QC, CA",
+        "languages": "PT / EN / FR / ES",
+        "status": "● Disponible para trabajar"
+      },
+      "stack_label": "02 — Stack CAD & Diseño"
+    },
+    "projects": {
+      "label": "// 01 — TRABAJOS SELECCIONADOS",
+      "title_1": "Diseño &",
+      "title_2": "Proyectos",
+      "title_3": "Industriales",
+      "disclaimer": "* las imágenes son solo con fines ilustrativos *"
+    },
+    "projects_design": {
+      "soft-db": {
+        "title": "Soft-DB",
+        "desc": "En Soft dB, analicé planos arquitectónicos e industriales para recomendar la mejor ubicación de equipos acústicos y de cancelación de ruido. Colaboré con ingenieros para garantizar que cada diseño proporcionara un control sonoro efectivo y cumpliera con los requisitos del proyecto."
+      },
+      "maquette-virtuelle": {
+        "title": "Diseñador Industrial",
+        "desc": "Como Diseñador/Delineante Industrial, produje modelos 3D detallados y planos técnicos 2D con Autodesk Inventor, con énfasis en piezas de chapa metálica, ensamblajes y flujos de fabricación. Colaboré con ingenieros para desarrollar diseños funcionales y preparar documentación precisa para la producción."
+      }
+    },
+    "testimonials": {
+      "label": "// 02 — INFORMES DE CAMPO",
+      "title_1": "Lo que la gente",
+      "title_2": "dice",
+      "leave": "Dejar un testimonio",
+      "modal_title_1": "Dejar un",
+      "modal_title_2": "testimonio",
+      "name_placeholder": "Tu nombre",
+      "role_placeholder": "Tu cargo / título",
+      "message_placeholder": "Tu mensaje",
+      "cancel": "Cancelar",
+      "submit": "ENVIAR",
+      "thank_you": "Gracias.",
+      "received": "Tu testimonio ha sido recibido.",
+      "error": "Todos los campos son obligatorios.",
+      "error_send": "Algo salió mal. Por favor, inténtalo de nuevo."
+    },
+    "cad": {
+      "label": "// 03 — CAD & HERRAMIENTAS",
+      "title_1": "Diseñando",
+      "title_2": "en 3 dimensiones",
+      "description": "El diseño industrial me enseñó a pensar en sistemas y tolerancias — habilidades que se transfieren directamente a la arquitectura de software. Hago el puente entre ambos mundos.",
+      "tools": [
+        {
+          "name": "AutoCAD",
+          "desc": "Dibujo 2D/3D, planos técnicos, maquetación y preparación de planos"
+        },
+        {
+          "name": "SolidWorks",
+          "desc": "Modelado 3D paramétrico, ensamblajes, planos listos para fabricación"
+        },
+        {
+          "name": "Inventor",
+          "desc": "Modelado 3D, chapa metálica, planos detallados y documentación"
+        },
+        {
+          "name": "Dibujo Técnico",
+          "desc": "Detallado 2D, acotación, tolerancias y planos listos para producción"
+        }
+      ]
+    },
+    "footer": "© 2026 DANILO COSTA — ALL RIGHTS RESERVED"
   }
 }

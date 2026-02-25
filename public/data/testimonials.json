@@ -5,26 +5,5 @@
         "role": "Teacher",
         "page": "web",
         "text": "I've had the pleasure of being Danilo's PHP teacher and of supervising his final project at Maisonneuve. He's a fast learner, a very detail-oriented person and a highly motivated worker. Hire him!"
-    },
-    {
-        "id": 2,
-        "name": "Sophie Tremblay",
-        "role": "Project Manager · Riopel Consultant",
-        "page": "industrial",
-        "text": "Danilo brings a rare mix of technical precision and design sensibility. His CAD background shows in how methodically he structures code."
-    },
-    {
-        "id": 3,
-        "name": "Marc Lefebvre",
-        "role": "Senior Engineer · Fabrication QC",
-        "page": "industrial",
-        "text": "Working with someone who understands tolerances AND software is uncommon. Danilo bridges both worlds with real ease."
-    },
-    {
-        "id": 4,
-        "name": "Ana Ribeiro",
-        "role": "Industrial Designer · São Paulo",
-        "page": "industrial",
-        "text": "His transition from dentistry to design to code is a testament to his adaptability. A precise thinker who delivers clean work."
     }
 ]

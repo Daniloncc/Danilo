@@ -266,6 +266,89 @@
                 "Mobile-first responsive design"
             ]
         }
+    },
+    "industrial": {
+        "badge": "Version Industrial Design",
+        "nav": {
+            "work": "Work", "cad": "CAD", "versions": "Versions",
+            "other_versions": "Other Versions", "language": "Language",
+            "web": "Web Developer", "dentist": "Dentist",
+            "open_to_work": "OPEN TO WORK"
+        },
+        "hero": {
+            "label": "// PORTFOLIO — INDUSTRIAL DESIGN & DEVELOPMENT",
+            "subtitle": "// Industrial Designer · CAD & 3D/2D Modeling",
+            "description": "I come from industrial design, <b>3D/2D modeling</b>, and problem-solving. Today, I apply the same design logic to digital systems — learning <b>Python</b> to streamline processes, improve efficiency, and build smarter tools.",
+            "specs_title": "Technical Specifications",
+            "specs_rev": "REV_2026.02",
+            "identity_label": "01 — Identity",
+            "identity": {
+                "name": "Danilo Costa",
+                "location": "Montreal, QC, CA",
+                "languages": "PT / EN / FR / ES",
+                "status": "● Open to work"
+            },
+            "stack_label": "02 — CAD & Design Stack"
+        },
+        "projects": {
+            "label": "// 01 — SELECTED WORK",
+            "title_1": "Design &",
+            "title_2": "Industrial",
+            "title_3": "Projects",
+            "disclaimer": "* images are for illustration purposes only *"
+        },
+        "projects_design": {
+            "soft-db": {
+                "title": "Soft-DB",
+                "desc": "At Soft dB, I analyzed architectural and industrial plans to recommend the best placement of acoustic and noise-cancellation equipment. I collaborated with engineers to ensure each layout delivered effective sound control and met project requirements."
+            },
+            "maquette-virtuelle": {
+                "title": "Industrial Designer",
+                "desc": "As an Industrial Designer/Drafter, I produced detailed 3D models and 2D technical drawings using Autodesk Inventor, with a strong focus on sheet metal parts, assemblies, and fabrication workflows. I collaborated with engineers to develop functional designs, optimize manufacturability, and prepare accurate documentation for production."
+            }
+        },
+        "testimonials": {
+            "label": "// 02 — FIELD REPORTS",
+            "title_1": "What people",
+            "title_2": "say",
+            "leave": "Leave a testimonial",
+            "modal_title_1": "Leave a",
+            "modal_title_2": "testimonial",
+            "name_placeholder": "Your name",
+            "role_placeholder": "Your role / title",
+            "message_placeholder": "Your message",
+            "cancel": "Cancel",
+            "submit": "SUBMIT",
+            "thank_you": "Thank you.",
+            "received": "Your testimonial has been received.",
+            "error": "All fields are required.",
+            "error_send": "Something went wrong. Please try again."
+        },
+        "cad": {
+            "label": "// 03 — CAD & TOOLS",
+            "title_1": "Designing",
+            "title_2": "in 3 dimensions",
+            "description": "Industrial design taught me to think in systems and tolerances — skills that transfer directly to software architecture. I bridge both worlds.",
+            "tools": [
+                {
+                    "name": "AutoCAD",
+                    "desc": "2D/3D drafting, technical drawings, layout and plan preparation"
+                },
+                {
+                    "name": "SolidWorks",
+                    "desc": "Parametric 3D modeling, assemblies, manufacturing-ready drawings"
+                },
+                {
+                    "name": "Inventor",
+                    "desc": "3D modeling, sheet metal design, detailed drawings and documentation"
+                },
+                {
+                    "name": "Technical Drawing",
+                    "desc": "2D detailing, dimensioning, tolerances, and production-ready plans"
+                }
+            ]
+        },
+        "footer": "© 2026 DANILO COSTA — ALL RIGHTS RESERVED"
     }
 }
 
