@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 
 const fadeUp = {
@@ -146,13 +147,14 @@ function TestimonialCard({ item, index }) {
 
 // ─── Modal form ───────────────────────────────────────────────────
 function TestimonialModal({ onClose }) {
+  const { t } = useTranslation();
   const [form, setForm] = useState({ name: "", role: "", text: "" });
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
 
   const handleSubmit = () => {
     if (!form.name || !form.role || !form.text) {
-      setError("All fields are required.");
+      setError(t("industrial.testimonials.error"));
       setTimeout(() => setError(false), 2000);
       return;
     }
@@ -169,7 +171,7 @@ function TestimonialModal({ onClose }) {
         setTimeout(() => onClose(), 2500);
       })
       .catch(() => {
-        setError("Something went wrong. Please try again.");
+        setError(t("industrial.testimonials.error_send"));
         setTimeout(() => setError(false), 2500);
       });
   };
@@ -184,7 +186,7 @@ function TestimonialModal({ onClose }) {
         position: "fixed",
         inset: 0,
         background: "rgba(0,0,0,0.7)",
-        zIndex: 10,
+        zIndex: 3,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -246,7 +248,7 @@ function TestimonialModal({ onClose }) {
                 color: "rgba(255,255,255,0.85)",
               }}
             >
-              Thank you.
+              {t("industrial.testimonials.thank_you")}
             </p>
             <p
               style={{
@@ -256,7 +258,7 @@ function TestimonialModal({ onClose }) {
                 fontFamily: "'IBM Plex Mono', monospace",
               }}
             >
-              Your testimonial has been received.
+              {t("industrial.testimonials.received")}
             </p>
           </div>
         ) : (
@@ -281,12 +283,21 @@ function TestimonialModal({ onClose }) {
                 letterSpacing: "-0.02em",
               }}
             >
-              Leave a <strong style={{ fontWeight: 600 }}>testimonial</strong>
+              {t("industrial.testimonials.modal_title_1")}{" "}
+              <strong style={{ fontWeight: 600 }}>
+                {t("industrial.testimonials.modal_title_2")}
+              </strong>
             </h3>
 
             {[
-              { key: "name", placeholder: "Your name" },
-              { key: "role", placeholder: "Your role / title" },
+              {
+                key: "name",
+                placeholder: t("industrial.testimonials.name_placeholder"),
+              },
+              {
+                key: "role",
+                placeholder: t("industrial.testimonials.role_placeholder"),
+              },
             ].map(({ key, placeholder }) => (
               <input
                 key={key}
@@ -316,7 +327,7 @@ function TestimonialModal({ onClose }) {
             ))}
 
             <textarea
-              placeholder="Your message"
+              placeholder={t("industrial.testimonials.message_placeholder")}
               rows={4}
               value={form.text}
               onChange={(e) => setForm({ ...form, text: e.target.value })}
@@ -368,7 +379,7 @@ function TestimonialModal({ onClose }) {
                   (e.target.style.color = "rgba(255,255,255,0.3)")
                 }
               >
-                // Cancel
+                // {t("industrial.testimonials.cancel")}
               </button>
               <button
                 onClick={handleSubmit}
@@ -387,7 +398,7 @@ function TestimonialModal({ onClose }) {
                 onMouseEnter={(e) => (e.target.style.background = "#A8421A")}
                 onMouseLeave={(e) => (e.target.style.background = "#C7521A")}
               >
-                SUBMIT →
+                {t("industrial.testimonials.submit")} →
               </button>
             </div>
 
@@ -404,7 +415,7 @@ function TestimonialModal({ onClose }) {
                     alignItems: "center",
                     justifyContent: "center",
                     background: "rgba(26,26,24,0.92)",
-                    zIndex: 10,
+                    zIndex: 3,
                   }}
                 >
                   <p
@@ -432,17 +443,17 @@ function TestimonialModal({ onClose }) {
 
 // ─── Main Section ─────────────────────────────────────────────────
 export default function TestimonialsIndustrial({ page = "industrial" }) {
+  const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
   const [testimonialsList, setTestimonialsList] = useState([]);
 
-  // ── Même logique que la page web : fetch + filter par page ──
   useEffect(() => {
     fetch("/data/testimonials.json")
       .then((res) => res.json())
       .then((data) => setTestimonialsList(data));
   }, []);
 
-  const filtered = testimonialsList.filter((t) => t.page === page);
+  const filtered = testimonialsList.filter((item) => item.page === page);
 
   return (
     <section
@@ -468,7 +479,7 @@ export default function TestimonialsIndustrial({ page = "industrial" }) {
       />
 
       <div
-        style={{ maxWidth: "1200px", margin: "0 auto", position: "relative" }}
+        style={{ margin: "0 auto", position: "relative" }}
         className="md:px-6"
       >
         {/* Header */}
@@ -488,7 +499,7 @@ export default function TestimonialsIndustrial({ page = "industrial" }) {
               marginBottom: "0.25rem",
             }}
           >
-            // 03 — FIELD REPORTS
+            {t("industrial.testimonials.label")}
           </p>
           <h2
             style={{
@@ -499,8 +510,10 @@ export default function TestimonialsIndustrial({ page = "industrial" }) {
               color: "#1A1A18",
             }}
           >
-            What people{" "}
-            <strong style={{ fontWeight: 600, color: "#C7521A" }}>say</strong>
+            {t("industrial.testimonials.title_1")}{" "}
+            <strong style={{ fontWeight: 600, color: "#C7521A" }}>
+              {t("industrial.testimonials.title_2")}
+            </strong>
           </h2>
         </motion.div>
 
@@ -555,7 +568,7 @@ export default function TestimonialsIndustrial({ page = "industrial" }) {
               e.target.style.color = "rgba(255,255,255,0.9)";
             }}
           >
-            + Leave a testimonial
+            + {t("industrial.testimonials.leave")}
           </button>
         </motion.div>
       </div>
