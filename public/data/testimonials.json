@@ -5,5 +5,12 @@
         "role": "Teacher",
         "page": "web",
         "text": "I've had the pleasure of being Danilo's PHP teacher and of supervising his final project at Maisonneuve. He's a fast learner, a very detail-oriented person and a highly motivated worker. Hire him!"
+    },
+    {
+        "id": 2,
+        "name": "Camille Breau",
+        "role": "Coworker",
+        "page": "web",
+        "text": "I had the opportunity to collaborate with Danilo, he is someone who listens deeply and genuinely values dialogue and teamwork. Rigorous, organized, and attentive to detail, he demonstrates great care both in the structure of his code and in the visual design of his interfaces.Beyond his technical skills, Danilo is an honest and caring person with a remarkable sense of responsibility. I sincerely hope he finds an environment where he can fully thrive and continue to grow."
     }
 ]
