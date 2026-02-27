@@ -92,7 +92,7 @@ function Hero() {
         <div className="grid grid-cols-3 border border-[#E2DDD6]">
           {[
             { num: "4", labelKey: "hero.stats.spoken" },
-            { num: "5+", labelKey: "hero.stats.projects" },
+            { num: "4", labelKey: "hero.stats.projects" },
             { num: "3", labelKey: "hero.stats.careers" },
           ].map((s, i) => (
             <div
