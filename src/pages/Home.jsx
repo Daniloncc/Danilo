@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import Nav from "../components/NavHome";
 import CustomCursor from "../components/CustomCursorWeb";
 import ProjectsHeaderSVG from "../components/ProjectsHeaderSVG";
+import ProfileImageCompare from "../components/ProfileImageCompare";
 import Caroussel from "../components/Caroussel";
 import Footer from "../components/FooterHome";
 
@@ -80,13 +81,14 @@ function Hero() {
         className="flex flex-col gap-6"
       >
         {/* Photo */}
-        <div className="w-full aspect-[4/2] bg-[#E2DDD6] flex items-center justify-center relative overflow-hidden">
-          <img src="/images/profil.jpg" alt="" />
+        {/* <div className="w-full aspect-[4/2] bg-[#E2DDD6] flex items-center justify-center relative overflow-hidden">
+          <img src="/images/profil_matrix.webp" alt="Danilo profil" />
           <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-[#7A9E7E]" />
           <span className="absolute top-3 right-3 w-5 h-5 border-t border-r border-[#7A9E7E]" />
           <span className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-[#7A9E7E]" />
           <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-[#7A9E7E]" />
-        </div>
+        </div> */}
+        <ProfileImageCompare />
 
         {/* Stats */}
         <div className="grid grid-cols-3 border border-[#E2DDD6]">
