@@ -169,7 +169,7 @@ function Hero() {
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="text-[11px] px-3 py-1 border border-[#E2DDD6] text-[#6B6B6B] bg-white hover:border-[#7A9E7E] hover:text-[#7A9E7E] transition-colors duration-200 cursor-default"
+                      className="text-[11px] px-3 py-1 border text-[#6B6B6B] bg-white border-[#7A9E7E] hover:text-[#7A9E7E] transition-colors duration-200 cursor-default"
                     >
                       {skill}
                     </span>
@@ -433,12 +433,12 @@ function Testimonials({ page = "web" }) {
             whileInView="visible"
             viewport={{ once: true }}
             custom={i * 0.1}
-            className="bg-white border border-[#165323] p-8"
+            className="flex flex-col bg-white border border-[#165323] p-8"
           >
             <p className="text-[14px] text-[#6B6B6B] leading-relaxed italic mb-6">
               " {item.text} "
             </p>
-            <div className="flex items-center gap-3">
+            <div className="mt-auto flex items-center gap-3 ">
               <div className="w-9 h-9 rounded-full bg-[#EDF2ED] flex items-center justify-center text-[11px] font-medium text-[#165323]">
                 {item.name
                   .split(" ")

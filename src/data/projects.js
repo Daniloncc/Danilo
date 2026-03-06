@@ -11,7 +11,7 @@ export const projects = [
   {
     id: 2,
     slug: "vino-figma",
-    title: "Vino — Figma",
+    title: "Vino - Figma",
     tech: ["Figma", "UI/UX Design", "Prototyping", "Wireframing"],
     github: null,
     live: "https://www.figma.com/proto/8XfH4DnfRe7QaXz8RL2TEw/Untitled?node-id=1-1903&t=u1ojxiFYgOSVCbc0-1",
@@ -58,7 +58,7 @@ export const projects = [
   {
     id: 4,
     slug: "portfolio",
-    title: "Portfolio — daniloncc.com",
+    title: "Portfolio - daniloncc.com",
     tech: ["React", "Vite", "Tailwind CSS", "Framer Motion", "shadcn/ui"],
     github: "https://github.com/Daniloncc/Danilo",
     live: "https://daniloncc.com",

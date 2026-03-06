@@ -13,7 +13,7 @@
     "title_1": "Construit avec",
     "title_2": "précision",
     "title_3": "chirurgicale",
-    "description": "Développeur full-stack avec une formation en <strong>dentisterie et design industriel</strong>. Je crée des expériences numériques propres et ciblées — des intégrations API à l'automatisation CAO. Trois carrières. Un seul état d'esprit.",
+    "description": "<strong>Développeur full-stack</strong> animé par la <strong>curiosité</strong> et le souci du détail. Après des carrières en dentisterie et en design industriel, j’aborde le développement avec un mélange unique de <strong>précision, créativité et résolution de problèmes.</strong>",
     "cta_work": "Voir mes projets",
     "cta_contact": "Me contacter →",
     "scroll": "Défiler",
@@ -41,21 +41,21 @@
     "label": "À propos",
     "title_1": "Un parcours",
     "title_2": "atypique",
-    "description": "De la dentisterie au Brésil au design industriel et au développement web à Montréal — mon chemin a été tout sauf linéaire. Chaque carrière m'a donné une perspective différente : la précision de la médecine, l'esthétique du design, et la logique du code. Le résultat : un développeur qui pense en systèmes et obsède sur les détails.",
+    "description": "De la dentisterie au Brésil au design industriel et au développement web à Montréal, mon chemin a été tout sauf linéaire. Chaque carrière m'a donné une perspective différente : la précision de la médecine, l'esthétique du design, et la logique du code. Le résultat : un développeur qui pense en systèmes et obsède sur les détails.",
     "timeline": [
       {
         "year": "2026",
-        "title": "Développement web — Collège Maisonneuve",
+        "title": "Développement web · Collège Maisonneuve",
         "sub": "Projets full-stack, API REST, MVC & travail d'équipe agile"
       },
       {
         "year": "2022",
-        "title": "Designer industriel - EMSOM",
+        "title": "Designer industriel · EMSOM",
         "sub": "Modélisation 3D, plans techniques 2D & prototypage"
       },
       {
         "year": "2013",
-        "title": "Dentiste - UEFS",
+        "title": "Dentiste · UEFS",
         "sub": "Chirurgie buccale, prothèses & soins restaurateurs"
       }
     ]
@@ -276,22 +276,22 @@
       "open_to_work": "DISPONIBLE"
     },
     "hero": {
-      "label": "// PORTFOLIO — DESIGN INDUSTRIEL & DÉVELOPPEMENT",
+      "label": "// PORTFOLIO · DESIGN INDUSTRIEL & DÉVELOPPEMENT",
       "subtitle": "// Designer Industriel · Modélisation CAO & 3D/2D",
-      "description": "Je viens du design industriel, de la <b>modélisation 3D/2D</b> et de la résolution de problèmes. Aujourd'hui, j'applique la même logique de design aux systèmes numériques — en apprenant <b>Python</b> pour optimiser les processus, améliorer l'efficacité et construire des outils plus intelligents.",
+      "description": "Je viens du design industriel, de la <b>modélisation 3D/2D</b> et de la résolution de problèmes. Aujourd'hui, j'applique la même logique de design aux systèmes numériques, en apprenant <b>Python</b> pour optimiser les processus, améliorer l'efficacité et construire des outils plus intelligents.",
       "specs_title": "Spécifications Techniques",
       "specs_rev": "REV_2026.02",
-      "identity_label": "01 — Identité",
+      "identity_label": "01 - Identité",
       "identity": {
         "name": "Danilo Costa",
         "location": "Montréal, QC, CA",
         "languages": "PT / EN / FR / ES",
-        "status": "● Disponible pour travailler"
+        "status": "Disponible pour travailler"
       },
-      "stack_label": "02 — Stack CAO & Design"
+      "stack_label": "02 - Stack CAO & Design"
     },
     "projects": {
-      "label": "// 01 — TRAVAUX SÉLECTIONNÉS",
+      "label": "// 01 - TRAVAUX SÉLECTIONNÉS",
       "title_1": "Design &",
       "title_2": "Projets",
       "title_3": "Industriels",
@@ -308,7 +308,7 @@
       }
     },
     "testimonials": {
-      "label": "// 02 — RAPPORTS DE TERRAIN",
+      "label": "// 02 - RAPPORTS DE TERRAIN",
       "title_1": "Ce que les gens",
       "title_2": "disent",
       "leave": "Laisser un témoignage",
@@ -325,10 +325,10 @@
       "error_send": "Une erreur est survenue. Veuillez réessayer."
     },
     "cad": {
-      "label": "// 03 — CAO & OUTILS",
+      "label": "// 03 - CAO & OUTILS",
       "title_1": "Concevoir",
       "title_2": "en 3 dimensions",
-      "description": "Le design industriel m'a appris à penser en systèmes et en tolérances — des compétences qui se transfèrent directement à l'architecture logicielle. Je fais le pont entre les deux mondes.",
+      "description": "Le design industriel m'a appris à penser en systèmes et en tolérances, des compétences qui se transfèrent directement à l'architecture logicielle. Je fais le pont entre les deux mondes.",
       "tools": [
         {
           "name": "AutoCAD",
@@ -348,6 +348,6 @@
         }
       ]
     },
-    "footer": "© 2026 DANILO COSTA  — ALL RIGHTS RESERVED"
+    "footer": "© 2026 DANILO COSTA - ALL RIGHTS RESERVED"
   }
 }

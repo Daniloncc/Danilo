@@ -17,7 +17,7 @@ export const projectDetails = [
     {
         id: 2,
         slug: "vino-figma",
-        title: "Vino — Figma",
+        title: "Vino - Figma",
         meta: {
             year: "2025",
             github: null,
@@ -77,7 +77,7 @@ export const projectDetails = [
     {
         id: 5,
         slug: "portfolio",
-        title: "Portfolio — daniloncc.com",
+        title: "Portfolio - daniloncc.com",
         meta: {
             year: "2025",
             github: "https://github.com/Daniloncc/Danilo",

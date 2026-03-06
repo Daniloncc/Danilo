@@ -202,7 +202,7 @@ export default function ProjectDetail() {
                 {staticProject.tech.map((tech) => (
                   <span
                     key={tech}
-                    className="text-[11px] px-2.5 py-1 border border-[#E2DDD6] text-[#6B6B6B] hover:border-[#7A9E7E] hover:text-[#7A9E7E] transition-colors bg-[#F7F5F0]"
+                    className="text-[11px] px-2.5 py-1 border text-[#6B6B6B] border-[#7A9E7E] hover:text-[#7A9E7E] transition-colors bg-[#F7F5F0]"
                   >
                     {tech}
                   </span>

@@ -102,13 +102,13 @@ export default function Nav() {
                 style={{
                   ...monoStyle,
                   fontSize: "0.7rem",
-                  color: "rgba(255,255,255,0.5)",
+                  color: "rgba(255,255,255,0.7)",
                   textDecoration: "none",
                   transition: "color 0.2s",
                 }}
                 onMouseEnter={(e) => (e.target.style.color = "#C7521A")}
                 onMouseLeave={(e) =>
-                  (e.target.style.color = "rgba(255,255,255,0.5)")
+                  (e.target.style.color = "rgba(255,255,255,0.7)")
                 }
               >
                 {label}
@@ -124,7 +124,7 @@ export default function Nav() {
               style={{
                 ...monoStyle,
                 fontSize: "0.7rem",
-                color: "rgba(255,255,255,0.5)",
+                color: "rgba(255,255,255,0.7)",
                 background: "none",
                 border: "none",
                 cursor: "none",
@@ -132,7 +132,7 @@ export default function Nav() {
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#C7521A")}
               onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "rgba(255,255,255,0.5)")
+                (e.currentTarget.style.color = "rgba(255,255,255,0.7)")
               }
             >
               {t("industrial.nav.versions")}
@@ -173,7 +173,7 @@ export default function Nav() {
                           padding: "0.75rem 1.25rem",
                           ...monoStyle,
                           fontSize: "0.68rem",
-                          color: "rgba(255,255,255,0.5)",
+                          color: "rgba(255,255,255,0.7)",
                           textDecoration: "none",
                           transition: "background 0.2s, color 0.2s",
                         }}
@@ -203,7 +203,7 @@ export default function Nav() {
               style={{
                 ...monoStyle,
                 fontSize: "0.7rem",
-                color: "rgba(255,255,255,0.5)",
+                color: "rgba(255,255,255,0.9)",
                 background: "none",
                 border: "none",
                 cursor: "none",
@@ -211,7 +211,7 @@ export default function Nav() {
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#C7521A")}
               onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "rgba(255,255,255,0.5)")
+                (e.currentTarget.style.color = "rgba(255,255,255,0.7)")
               }
             >
               <span style={{ fontSize: "0.9rem", lineHeight: 1 }}>
@@ -263,10 +263,10 @@ export default function Nav() {
                             ...monoStyle,
                             fontSize: "0.68rem",
                             color: isActive
-                              ? "#C7521A"
+                              ? "#FAFAF8"
                               : "rgba(255,255,255,0.5)",
                             background: isActive
-                              ? "rgba(199,82,26,0.12)"
+                              ? "rgba(199,82,26,0.5)"
                               : "transparent",
                             border: "none",
                             cursor: "none",
@@ -295,7 +295,7 @@ export default function Nav() {
                             <span
                               style={{ marginLeft: "auto", color: "#C7521A" }}
                             >
-                              ◆
+                               · 
                             </span>
                           )}
                         </button>
@@ -317,7 +317,7 @@ export default function Nav() {
             color: "rgba(255,255,255,0.35)",
           }}
         >
-          REV 2026.02 —{" "}
+          REV 2026.02  · {" "}
           <span style={{ color: "#C7521A" }}>
             {t("industrial.nav.open_to_work")}
           </span>

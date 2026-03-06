@@ -307,7 +307,7 @@ function SpecTag({ children }) {
       style={{
         fontFamily: "'IBM Plex Mono', monospace",
         fontSize: "0.62rem",
-        color: hov ? "#C7521A" : "#5A5A54",
+        color: "#1A1A18",
         border: `1px solid ${hov ? "#C7521A" : "rgba(26,26,24,0.12)"}`,
         padding: "0.2rem 0.6rem",
         letterSpacing: "0.06em",

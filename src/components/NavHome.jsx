@@ -104,7 +104,7 @@ export default function Navbar() {
                       <a
                         href={v.href}
                         onClick={() => setDropdownOpen(false)}
-                        className="block px-5 py-3 text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] hover:bg-[#EDF2ED] transition-colors duration-200"
+                        className="block whitespace-nowrap px-5 py-3 text-[11px] uppercase tracking-widest text-[#6B6B6B] hover:text-[#7A9E7E] hover:bg-[#EDF2ED] transition-colors duration-200"
                       >
                         {v.label}
                       </a>
